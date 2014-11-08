@@ -7,25 +7,35 @@
 </head>
 
 <body>
+<form action="edit-poisk.php" method="post">
 <?php
 require 'connect.php';
 $Nomer = trim($_REQUEST['Nomer']);
 
-
-$sql_select = "SELECT * FROM zakaz WHERE Nomer='$Nomer' ";
+$sql_select = "SELECT id, Nomer, Data, Familia, Name, Otchestvo FROM zakaz WHERE Nomer='$Nomer' ";
 $result = mysql_query($sql_select);
 $row = mysql_fetch_array($result);
 
-if($row)
+/*if($row)
 {
-	printf("<p>Пользователь: " .$row['Familia'] . " " .$row['Name'] . " " .$row['Otchestvo'] . " " .$row['Telefon'] . " " .$row['Email'] ."</p> 
-	<p><i>Заказ: </i></p><p>Номер: " .$row['Nomer'] . "</p><p>Создан: " .$row['Data'] . "</p><p>Вид устройства: " .$row['Vid_ustroystva'] . "</p><p>Номер: " .$row['Nomer'] . "</p><p>Производитель: " .$row['Proizvoditel'] . "</p><p>Модель: " .$row['Model'] . "</p><p>Дефекты: " .$row['Defekti'] . "</p><p>Вид поломки: " .$row['Vid_polomki'] . "</p><p>Стоимость работ: " .$row['Stoimost_pabot'] . "</p><p>Деталь: " .$row['Detal'] . "</p><p>Стоимость детали: " .$row['Stoimost_detali'] . "</p><p>СТатус: " .$row['Status'] . "</p><p>Ремонтёр: " .$row['Remonter'] . "</p>---------<br/>"
+	printf("<p>Пользователь: " .$row['Familia'] . " " .$row['Name'] . " " .$row['Otchestvo'] . "</p> 
+	<p><i>Заказ: </i></p><p>Номер: " .$row['Nomer'] . "</p><p>Создан: " .$row['Data'] . "</p>---------<br/>"
 	);
 }
-else{echo ("Пользователя с таким именем в базе нет<br/><br/>");}
+else{echo ("Пользователя с таким именем в базе нет<br/><br/>");}*/
 
 
+do
+{
+printf("<input type='radio' name='user' value='%s'>%s %s %s %s %s<br/><br/>", $row['id'], $row['Nomer'], $row['Data'], $row['Familia'], $row['Name'], $row['Otchestvo']);	
+}
+while($row = mysql_fetch_array($result))
 ?>
+<input type="submit" value="Выбрать элемент">
+
+
+
+
 <a href="search_user.php">Вернуться к поиску</a><br/><br/>
 <a href="info_form.php">Добавить пользователя</a>
 </body>

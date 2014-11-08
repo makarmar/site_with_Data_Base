@@ -11,8 +11,7 @@
 <fieldset>
 <label for="Nomer"><div class="no_print">Номер:</div></label><br/> 
 <input type="text" name="Nomer" size="10"><br/> 
-<label for="Data"><div class="no_print">Дата:</div></label><br/> 
-<input type="text" name="Data" size="10"><br/> 
+
 <label for="Familia"><div class="no_print">Фамилия:</div></label><br/> 
 <input type="text" name="Familia" size="30"><br/> 
 <label for="Name"><div class="no_print">Имя:</div></label><br/> 

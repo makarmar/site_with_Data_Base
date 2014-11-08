@@ -29,7 +29,7 @@ $Status = trim($_REQUEST['Status']);
 $Remonter = trim($_REQUEST['Remonter']); 
 
 $insert_sql = "INSERT INTO zakaz (Nomer, Data, Familia, Name, Otchestvo, Telefon, Email, Vid_ustroystva, Proizvoditel, Model, Defekti, Vid_polomki, Stoimost_pabot, Detal, Stoimost_detali, Status, Remonter)" . 
-"VALUES('{$Nomer}', '{$Data}', '{$Familia}', '{$Name}', '{$Otchestvo}', '{$Telefon}', '{$Email}', '{$Vid_ustroystva}', '{$Proizvoditel}', '{$Model}', '{$Defekti}', '{$Vid_polomki}', '{$Stoimost_pabot}', '{$Detal}', '{$Stoimost_detali}', '{$Status}', '{$Remonter}');"; 
+"VALUES('{$Nomer}', now(), '{$Familia}', '{$Name}', '{$Otchestvo}', '{$Telefon}', '{$Email}', '{$Vid_ustroystva}', '{$Proizvoditel}', '{$Model}', '{$Defekti}', '{$Vid_polomki}', '{$Stoimost_pabot}', '{$Detal}', '{$Stoimost_detali}', '{$Status}', '{$Remonter}');"; 
 mysql_query($insert_sql);
 echo "<p>Заказ сохранён в базе!</p>";
 ?>

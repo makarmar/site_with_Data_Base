@@ -11,7 +11,7 @@
 require 'connect.php';
 $id=$_REQUEST['id'];
 $Nomer = $_REQUEST['Nomer']; 
-$Data = $_REQUEST['Data']; 
+
 $Familia = $_REQUEST['Familia']; 
 $Name = $_REQUEST['Name']; 
 $Otchestvo = $_REQUEST['Otchestvo'];
@@ -28,7 +28,7 @@ $Stoimost_detali = $_REQUEST['Stoimost_detali'];
 $Status = $_REQUEST['Status']; 
 $Remonter = $_REQUEST['Remonter']; 
 
-$update_sql = "UPDATE zakaz SET  Nomer='$Nomer', Data='$Data', Familia='$Familia', Name='$Name', Otchestvo='$Otchestvo', Telefon='$Telefon', Email='$Email', Vid_ustroystva='$Vid_ustroystva', Proizvoditel='$Proizvoditel', Model='$Model', Defekti='$Defekti', Vid_polomki='$Vid_polomki', Stoimost_pabot='$Stoimost_pabot', Detal='$Detal', Stoimost_detali='$Stoimost_detali', Status='$Status', Remonter='$Remonter' WHERE id='$id'";
+$update_sql = "UPDATE zakaz SET  Nomer='$Nomer',  Familia='$Familia', Name='$Name', Otchestvo='$Otchestvo', Telefon='$Telefon', Email='$Email', Vid_ustroystva='$Vid_ustroystva', Proizvoditel='$Proizvoditel', Model='$Model', Defekti='$Defekti', Vid_polomki='$Vid_polomki', Stoimost_pabot='$Stoimost_pabot', Detal='$Detal', Stoimost_detali='$Stoimost_detali', Status='$Status', Remonter='$Remonter' WHERE id='$id'";
 mysql_query($update_sql) or die("Ошибка вставки" . mysql_error());
 echo '<p>Заказ сохранён в базе!</p>';
 
