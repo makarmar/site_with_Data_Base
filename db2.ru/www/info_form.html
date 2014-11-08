@@ -7,12 +7,10 @@
 </head>
 
 <body>
-<form action="form.php" method="post" name="forma">
+<form action="scripts/form.php" method="post" name="forma">
 <fieldset>
 <label for="Nomer"><div class="no_print">Номер:</div></label><br/> 
 <input type="text" name="Nomer" size="10"><br/> 
-<label for="Data"><div class="no_print">Дата:</div></label><br/> 
-<input type="text" name="Data" size="10"><br/> 
 <label for="Familia"><div class="no_print">Фамилия:</div></label><br/> 
 <input type="text" name="Familia" size="30"><br/> 
 <label for="Name"><div class="no_print">Имя:</div></label><br/> 
@@ -24,33 +22,34 @@
 <label for="Email"><div class="no_print">Email:</div></label><br/> 
 <input type="text" name="Email" size="30"><br/> 
 
+
+
 <label for="Vid_ustroystva">Вид устройства:</label><br/>
-<?php
-require 'connect.php';
-$result =  mysql_query("SELECT id, name FROM Vidustroystva");
-echo "<select name='category_list'>";
-while($row = mysql_fetch_array($result))
-{
- echo "<option value='".$row['name']."'>".$row['name']."</option>";
-}
-echo '<option value="" selected="selected">Выберите..</option>';
-echo "</select>";
-?></br>
+<select name="Vid_ustroystva">
+  <option value="">Выберите:</option>
+  <option>Телефон</option>
+  <option>Смартфон</option>
+  <option>Планшет</option>
+  <option>Ультрабук</option>
+  <option>Ноутбук</option>
+  <option>Компьютер</option>
+  <option>Монитор</option>
+  <option>Видио регистратор</option>
+  <option>Другое</option>
+</select> </br>
+
+
 
 <label for="Proizvoditel">Производитель:</label><br/> 
-<?php
-require 'connect.php';
-$result =  mysql_query("SELECT id, name FROM Proizvoditel");
-echo "<select name='category_list2'>";
-while($row = mysql_fetch_array($result))
-{
- echo "<option value='".$row['name']."'>".$row['name']."</option>";
-}
-echo '<option value="" selected="selected">Выберите..</option>';
-echo "</select>";
-?></br>
-
-
+<select name="Proizvoditel">
+  <option value="">Выберите:</option>
+  <option>Asus</option>
+  <option>Acer</option>
+  <option>Lenovo</option>
+  <option>Samsung</option>
+  <option>Sony</option>
+  <option>Explay</option>
+</select> </br>
  
 <label for="Model">Модель:</label><br/> 
 <input type="text" name="Model" size="30"><br/> 
@@ -58,17 +57,15 @@ echo "</select>";
 <input type="text" name="Defekti" size="50"><br/> 
 
 <label for="Vid_polomki">Вид поломки:</label><br/> 
-<?php
-require 'connect.php';
-$result =  mysql_query("SELECT id, name FROM Vidpolomki");
-echo "<select name='category_list3'>";
-while($row = mysql_fetch_array($result))
-{
- echo "<option value='".$row['name']."'>".$row['name']."</option>";
-}
-echo '<option value="" selected="selected">Выберите..</option>';
-echo "</select>";
-?></br>
+<select name="Vid_polomki">
+  <option value="">Выберите:</option>
+  <option>Замена тачскрина</option>
+  <option>Замена разъема питания</option>
+  <option>Замена дисплея</option>
+  <option>Обновление ОС</option>
+  <option>Разблокировка ключа</option>
+  <option>Чистка</option>
+</select> </br> 
 
 <label for="Stoimost_pabot">Стоимость работ:</label><br/> 
 <input type="text" name="Stoimost_pabot" size="10"><br/> 
@@ -88,7 +85,6 @@ echo "</select>";
 
 </form>
 
-<a href="search_user.php">Вернуться к поиску</a>
-<a href="select_change.php">Страница редактирования</a>
+<a href="search_user.html">Вернуться к поиску</a>
 </body>
 </html>
