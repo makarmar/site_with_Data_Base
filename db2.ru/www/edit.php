@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
+=======
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+>>>>>>> f55527339ef2a6372f9b411b8ab6bdd1f7148c0a
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
@@ -93,6 +97,12 @@ printf("<form action='update.php' method='post' name='forma'>
 </form>",$row['id'], $row['Nomer'], $row['Data'], $row['Familia'], $row['Name'], $row['Otchestvo'], $row['Telefon'], $row['Email'],  $row['Model'], $row['Defekti'], $row['Vid_polomki'], $row['Stoimost_pabot'], $row['Detal'], $row['Stoimost_detali'], $row['Status'], $row['Remonter']);
 ?>
 
+<<<<<<< HEAD
 <a href="menu.php">Назад в меню</a></br></br>
+=======
+<a href="info_form.php">Добавить пользователя</a><br/><br/>
+<a href="search_user.php">Вернуться к поиску</a><br/><br/>
+<a href="select_change.php">Вернуться к выбору записей для редактирования</a><br/><br/>
+>>>>>>> f55527339ef2a6372f9b411b8ab6bdd1f7148c0a
 </body>
 </html>
