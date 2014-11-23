@@ -5,6 +5,6 @@ git init -- фиксация в папке - становишься мастером
 git remote add origin https://github.com/makarmar/site_with_Data_Base.git -- откуда
 
 git pull origin master --куда на комп вытащить
-git add /db2.ru/www/ . -- все файлы из папки по пути...
+git add db2.ru/www/ . -- все файлы из папки по пути...
 git commit -m 'was added smth'    -- комментарии
 git push origin master (login, password )
