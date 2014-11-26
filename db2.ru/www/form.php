@@ -23,13 +23,14 @@ $Model = trim($_REQUEST['Model']);
 $Defekti = trim($_REQUEST['Defekti']); 
 $Vid_polomki = trim($_REQUEST['category_list3']); 
 $Stoimost_pabot = trim($_REQUEST['Stoimost_pabot']); 
-$Detal = trim($_REQUEST['Detal']); 
+$Detal = trim($_REQUEST['category_list4']); 
+$Detal_com = trim($_REQUEST['Detal_com']); 
 $Stoimost_detali = trim($_REQUEST['Stoimost_detali']); 
-$Status = trim($_REQUEST['Status']); 
-$Remonter = trim($_REQUEST['Remonter']); 
+$Status = trim($_REQUEST['category_list5']); 
+$Remonter = trim($_REQUEST['category_list6']); 
 
-$insert_sql = "INSERT INTO zakaz (Nomer, Data, Familia, Name, Otchestvo, Telefon, Email, Vid_ustroystva, Proizvoditel, Model, Defekti, Vid_polomki, Stoimost_pabot, Detal, Stoimost_detali, Status, Remonter)" . 
-"VALUES('{$Nomer}', now(), '{$Familia}', '{$Name}', '{$Otchestvo}', '{$Telefon}', '{$Email}', '{$Vid_ustroystva}', '{$Proizvoditel}', '{$Model}', '{$Defekti}', '{$Vid_polomki}', '{$Stoimost_pabot}', '{$Detal}', '{$Stoimost_detali}', '{$Status}', '{$Remonter}');"; 
+$insert_sql = "INSERT INTO zakaz (Nomer, Data, Familia, Name, Otchestvo, Telefon, Email, Vid_ustroystva, Proizvoditel, Model, Defekti, Vid_polomki, Stoimost_pabot, Detal, Detal_com, Stoimost_detali, Status, Remonter)" . 
+"VALUES('{$Nomer}', now(), '{$Familia}', '{$Name}', '{$Otchestvo}', '{$Telefon}', '{$Email}', '{$Vid_ustroystva}', '{$Proizvoditel}', '{$Model}', '{$Defekti}', '{$Vid_polomki}', '{$Stoimost_pabot}', '{$Detal}', '{$Detal_com}', '{$Stoimost_detali}', '{$Status}', '{$Remonter}');"; 
 mysql_query($insert_sql);
 echo "<p>Заказ сохранён в базе!</p>";
 ?>

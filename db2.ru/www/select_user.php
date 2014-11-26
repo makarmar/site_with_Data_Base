@@ -26,7 +26,7 @@ printf("<input type='radio' name='user' value='%s' checked='checked'>%s %s %s %s
 while($row = mysql_fetch_array($result))
 
 ?>
-<input type="submit" value="Выбрать элемент";>
+<input type="submit" value="Редактировать заказ";>
 
 <a href="menu.php">Назад в меню</a></br></br>
 </body>

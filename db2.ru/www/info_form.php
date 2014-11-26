@@ -71,14 +71,51 @@ echo "</select>";
 
 <label for="Stoimost_pabot">Стоимость работ:</label><br/> 
 <input type="text" name="Stoimost_pabot" size="10"><br/> 
+
 <label for="Detal">Необходимая деталь:</label><br/> 
-<input type="text" name="Detal" size="30"><br/> 
+<?php
+require 'connect.php';
+$result =  mysql_query("SELECT id, name FROM Detal");
+echo "<select name='category_list4'>";
+while($row = mysql_fetch_array($result))
+{
+ echo "<option value='".$row['name']."'>".$row['name']."</option>";
+}
+echo '<option value="" selected="selected">Выберите..</option>';
+echo "</select>";
+?></br>
+
+
+<label for="Detal_com">Коммент:</label><br/> 
+<input type="text" name="Detal_com" size="30"><br/> 
+
 <label for="Stoimost_detali">Стоимость детали:</label><br/> 
 <input type="text" name="Stoimost_detali" size="10"><br/> 
+
 <label for="Status">Статус:</label><br/> 
-<input type="text" name="Status" size="30"><br/> 
+<?php
+require 'connect.php';
+$result =  mysql_query("SELECT id, name FROM Status");
+echo "<select name='category_list5'>";
+while($row = mysql_fetch_array($result))
+{
+ echo "<option value='".$row['name']."'>".$row['name']."</option>";
+}
+echo '<option value="" selected="selected">Выберите..</option>';
+echo "</select>";
+?></br>
+
 <label for="Remonter">Ремонтёр:</label><br/> 
-<input type="text" name="Remonter" size="50"><br/> 
+<?php
+require 'connect.php'; 
+$result =  mysql_query("SELECT fio FROM Reg_vxod WHERE id = ( SELECT MAX( id ) FROM Reg_vxod )");
+echo "<select name='category_list6'>";
+while($row = mysql_fetch_array($result))
+{
+ echo "<option value='".$row['fio']."'>".$row['fio']."</option>";
+}
+echo "</select>";
+?></br> 
 </fieldset>
 <br/>
 

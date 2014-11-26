@@ -15,10 +15,10 @@ $result = mysql_query($select_sql);
 $row = mysql_fetch_array($result);
 printf("<form action='update.php' method='post' name='forma'>
 <fieldset>
-<input type='hidden' name='id'  value='%s'><br/>
+<input type='hidden' name='id'  value='%s' ><br/>
 
 <label for='Nomer'>Номер:</label><br/>
-<input type='text' name='Nomer' size='30' value='%s'><br/>
+<input type='text' name='Nomer' size='30' value='%s' readonly='readonly'><br/>
 
 <label for='Familia'>Фамилия:</label><br/>
 <input type='text' name='Familia' size='30' value='%s'><br/>
@@ -53,16 +53,18 @@ printf("<form action='update.php' method='post' name='forma'>
 <label for='Stoimost_detali'>Стоимость детали:</label><br/>
 <input type='text' name='Stoimost_detali' size='30' value='%s'><br/>
 <label for='Status'>Статус:</label><br/>
-<input type='text' name='Status' size='30' value='%s'><br/>
+<input type='text' name='Status' size='30' value='%s' readonly='readonly'><br/>
 <label for='Remonter'>Ремонтер:</label><br/>
-<input type='text' name='Remonter' size='30' value='%s'><br/>
+<input type='text' name='Remonter' size='30' value='%s' readonly='readonly'><br/>
+<label for='Kod_ustr'>Код устройства:</label><br/>
+<input type='text' name='Kod_ustr' size='30' value='%s' ><br/>
 
 </fieldset>
 <br/>
 <fieldset>
 <input id='submit' type='submit' value='Редактировать запись'><br/>
 </fieldset>
-</form>",$row['id'], $row['Nomer'],  $row['Familia'], $row['Name'], $row['Otchestvo'], $row['Telefon'], $row['Email'], $row['Vid_ustroystva'], $row['Proizvoditel'],  $row['Model'], $row['Defekti'], $row['Vid_polomki'], $row['Stoimost_pabot'], $row['Detal'], $row['Stoimost_detali'], $row['Status'], $row['Remonter']);
+</form>",$row['id'], $row['Nomer'],  $row['Familia'], $row['Name'], $row['Otchestvo'], $row['Telefon'], $row['Email'], $row['Vid_ustroystva'], $row['Proizvoditel'],  $row['Model'], $row['Defekti'], $row['Vid_polomki'], $row['Stoimost_pabot'], $row['Detal'], $row['Stoimost_detali'], $row['Status'], $row['Remonter'], $row['Kod_ustr']);
 ?>
 
 <a href="menu.php">Назад в меню</a></br></br>

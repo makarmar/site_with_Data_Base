@@ -53,7 +53,8 @@ echo"Вы неправильно ввели E-mail"; // выводим сообщение об ошибке
    
   $insert = mysql_query("INSERT INTO `users` (`login` ,`password` ,`email` ) VALUES ('$login', '$password', '$email')"); //выполняем запрос на добавление нового пользователя  
   if($insert == true){  
-  echo "Вы успешно зарегистрированы!";  
+  echo "Вы успешно зарегистрированы!</n></n> "; 
+  echo "<a href='vhod.php'>Вход на сайт</a>";
   }else{  
   echo "Непредвиденная ошибка!";  
   }  

@@ -18,11 +18,7 @@
 
 </form>
 </fieldset>
-<fieldset>
-<form method="post" action="all_users.php">
-<input id="submit" type="submit" value="Вывести всех пользователей"><br/>
-</form>
-</fieldset>
+
 <a href="menu.php">Назад в меню</a></br></br>
 </body>
 </html>

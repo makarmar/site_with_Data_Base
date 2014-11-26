@@ -22,8 +22,13 @@ while($row = mysql_fetch_array($result))
 ?>
 
 
-<input type="submit" value="Выбрать элемент">
+<input type="submit" value="Редактировать заказ">
 
+</form>
+
+<form action="zakrit.php" method="post">
+
+<input type="submit" value="Закрыть заказ">
 </form>
 <a href="menu.php">Назад в меню</a></br></br>
 </body>

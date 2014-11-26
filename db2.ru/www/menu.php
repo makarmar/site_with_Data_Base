@@ -8,6 +8,7 @@
 <a href="info_form.php">Новый заказ</a></br></br>
 <a href="search_user.php">Найти заказ</a></br></br>
 <a href="select_change.php">Вся база</a></br></br>
+<a href="vhod.php">На выход</a></br></br>
 
 </body>
 </html>
