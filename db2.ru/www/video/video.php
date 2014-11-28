@@ -13,11 +13,10 @@ echo "
 <body> 
 
 <p>Меню:</p>
-<a href='info_form.php'>Новый заказ</a></br></br>
-<a href='search_user.php'>Найти заказ</a></br></br>
-<a href='select_change.php'>Вся база</a></br></br>
-<a href='video/video.php'>Видео в помощь</a></br></br>
-<a href='vhod.php'>На выход</a></br></br>
+<a href='apple.php'>Apple</a></br></br>
+<a href='phone.php'>Телефоны\Смартфоны</a></br></br>
+<a href='planshet.php'>Планшеты</a></br></br>
+<a href='../menu.php'>Назад в меню</a></br></br>
 
 </body>
 </html> 
