@@ -7,7 +7,7 @@
 <body>
 <?php
 require 'connect.php';
- //session_start();
+
 //header('Refresh: 3; URL=http://db2.ru/menu.php'); 
 //echo 'Вы будете перенаправлены на главную страницу через 5 секунд.'; 
 

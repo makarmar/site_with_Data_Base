@@ -34,6 +34,9 @@ if(isset($_SESSION['login']))
 		echo ('<form action="close.php" method="POST">
 				<input type="submit" value="Выход"/>
 			</form>');
+		echo ('<form action="kassa_vecher.php" method="POST">
+				<input type="submit" value="Закрыть кассу"/>
+			</form>');	
 }
 echo"
 </body></html>"; 

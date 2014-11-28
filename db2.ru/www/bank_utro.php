@@ -7,7 +7,7 @@ if (isset($_SESSION['login']))
 echo "
 <html>
 <head>
-<title>Форма входа на PHP</title>
+<title>Касса на утро</title>
 </head><body>
 <form action='bank_sc.php' method='post' name='forma'>
 <fieldset>
