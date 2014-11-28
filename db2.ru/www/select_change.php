@@ -1,14 +1,22 @@
+<?php
+require 'connect.php';
+session_start();
+if (isset($_SESSION['login']))
+{
+
+echo "
+
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<link rel="stylesheet" type="text/css" href="style.css">
+<meta http-equiv='Content-Type' content='text/html; charset=windows-1251'>
+<link rel='stylesheet' type='text/css' href='style.css'>
 
 <title>Выбор пользователя для редактирования.</title>
 </head>
 <body>
-<form action="edit.php" method="post">
-
+<form action='edit.php' method='post'>
+"; ?>
 <?php
 require 'connect.php';
 $select_sql = "SELECT id, Nomer, Data, Familia, Name, Otchestvo FROM zakaz";
@@ -21,15 +29,25 @@ printf("<input type='radio' name='user' value='%s'>%s %s %s %s %s<br/><br/>", $r
 while($row = mysql_fetch_array($result))
 ?>
 
-
-<input type="submit" value="Редактировать заказ">
+<?
+echo "
+<input type='submit' value='Редактировать заказ'>
 
 </form>
 
-<form action="zakrit.php" method="post">
+<form action='zakrit.php' method='post'>
 
-<input type="submit" value="Закрыть заказ">
+<input type='submit' value='Закрыть заказ'>
 </form>
-<a href="menu.php">Назад в меню</a></br></br>
+<a href='menu.php'>Назад в меню</a></br></br>
 </body>
 </html>
+";
+
+}
+
+else 
+{
+header('location:vhod.php');
+}
+?>

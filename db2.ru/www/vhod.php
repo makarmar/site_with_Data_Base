@@ -15,7 +15,7 @@ if(isset($_SESSION['login']))
     if (empty($_SESSION['login']) or empty($_SESSION['id']))
  // Если пусты, то 
     {
-			echo "<p style='margin-left:60px;'>Вы вошли на сайт, как гость</p><br>
+				echo "<p style='margin-left:60px;'>Вы вошли на сайт, как гость</p><br>
 <!--Подключение обработчика формы-->
 <form id='forma' action='script1.php' method='post'>
 <h1>Форма входа</h1>
@@ -25,13 +25,11 @@ if(isset($_SESSION['login']))
 <p><input type='submit' name='submit' value='Войти'>
 <!--**** Кнопка (type='submit') отправляет данные на страничку script1.php ***** --> 
 <br></p></form><p style='margin-left:60px;'><a href='reg.php'>Регистрация</a></p>";
-
 	
 	}
  else
  // Если не пусты, то 
     {
-	
 	    echo "<br /><br />Вы вошли на сайт, как ".$_SESSION['login']."<br><br />";
 		echo ('<form action="close.php" method="POST">
 				<input type="submit" value="Выход"/>
