@@ -17,6 +17,7 @@ echo "
 <a href='search_user.php'>Найти заказ</a></br></br>
 <a href='select_change.php'>Вся база</a></br></br>
 <a href='video/video.php'>Видео в помощь</a></br></br>
+<a href='forum/test.php'>Форум</a></br></br>
 <a href='vhod.php'>На выход</a></br></br>
 
 </body>
