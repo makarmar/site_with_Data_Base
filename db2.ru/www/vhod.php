@@ -24,7 +24,7 @@ if(isset($_SESSION['login']))
 <p>Пароль<br /><input type='password' name='password'></p>
 <p><input type='submit' name='submit' value='Войти'>
 <!--**** Кнопка (type='submit') отправляет данные на страничку script1.php ***** --> 
-<br></p></form><p style='margin-left:60px;'><a href='reg.php'>Регистрация</a></p>";
+";
 	
 	}
  else

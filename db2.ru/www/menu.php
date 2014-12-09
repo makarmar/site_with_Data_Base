@@ -19,7 +19,7 @@ echo "
 <a href='video/video.php'>Видео в помощь</a></br></br>
 <a href='forum/test.php'>Форум</a></br></br>
 <a href='vhod.php'>На выход</a></br></br>
-
+<a href='reg.php'>Регистрация нового пользователя</a>
 </body>
 </html> 
 ";

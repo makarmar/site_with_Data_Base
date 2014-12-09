@@ -1,10 +1,23 @@
+<?php
+require 'connect.php';
+session_start();
+if (isset($_SESSION['login'])<>'admin')
+{
+
+echo "
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<title>Регистрация</title>
+<meta http-equiv='Content-Type' content='text/html; charset=windows-1251'>
+<title>Регистрация</title>";
+ ?>
 
+ 
+ 
 <?php  
+require 'connect.php';
 $config = array(); // указываем, что переменная $config это массив  
 $config['server'] = "localhost"; //сервер MySQL. Обычно это localhost  
 $config['login'] ="sa"; //пользователь MySQL  
@@ -15,13 +28,19 @@ $connect = mysql_connect($config['server'], $config['login'], $config['passw']) 
 mysql_select_db($config['name_db'], $connect) or die("Error!"); // выбираем БД  или, в случаии ошибки, прекращаем выполнение кода  
 ?>
 
+<?php 
+require 'connect.php';
+echo "
 </head>
 
 <body>
-<div align="center">
+<div align='center'>
 
 
-<div align="center" id="error">  
+<div align='center' id='error'>   ";
+?>
+
+
 <?php  
 if(isset($_POST['submit'])){ //выполняем нижеследующий код, только если нажата кнопка 
 $query = mysql_query("SELECT * FROM `users`  WHERE `login`='".$_POST['login']."'"); //отправляем запрос на выборку всего содержимого , где поле логин равно переменной $login  
@@ -62,17 +81,28 @@ echo"Вы неправильно ввели E-mail"; // выводим сообщение об ошибке
   }  
 
 }  
-?>  
+?> 
+<?php 
+require 'connect.php';
+echo "
 </div>
 
 
-<form action="" method="post" enctype="multipart/form-data">
-Логин:<br /><input name="login" type="text" size="20"><br />
-Пароль:<br /><input name="password" type="password" size="20"><br />
-Еще раз пароль:<br /><input name="password2" type="password" size="20"><br />
-E-mail:<br /><input name="email" type="text" size="20"><br /><br />
-<input name="submit" type="submit" value="Зарегистрироваться"><br />
+<form action='' method='post' enctype='multipart/form-data'>
+Логин:<br /><input name='login' type='text' size='20'><br />
+Пароль:<br /><input name='password' type='password' size='20'><br />
+Еще раз пароль:<br /><input name='password2' type='password' size='20'><br />
+E-mail:<br /><input name='email' type='text' size='20'><br /><br />
+<input name='submit' type='submit' value='Зарегистрироваться'><br />
 </form>
 </div>
 </body>
-</html>
+</html> ";
+}
+else 
+{
+echo "Эта страница доступна только администратору </br>
+<a href='menu.php'>Назад в меню</a></br>";
+
+}
+?>
