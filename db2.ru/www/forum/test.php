@@ -19,7 +19,15 @@ if (isset($_POST['submit'])) {
         }
     }*/
 
+	//session_start();
+	if (md5($_POST['norobot']) == $_SESSION['randomnr2'])
+	 {
     $forum->Add_new_post($_POST['frm_ptitle'],$_POST['frm_text'],$_POST['frm_ip'],$_POST['frm_name'],$_POST['frm_wid']);
+     }
+	 else
+	 {
+	 echo "Не правильно введена капча";
+	 }
 }
 
 if (isset($_GET['wid'])) {

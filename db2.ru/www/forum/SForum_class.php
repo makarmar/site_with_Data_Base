@@ -69,7 +69,8 @@ class SForum {
 
     // SForum: constructor, connecting to DB
     function SForum() {
-        $this->ptitle = NULL;
+        session_start();
+		$this->ptitle = NULL;
         $this->pansw = 0;
         $this->title = "<TITLE>$this->Форум</TITLE>";
         print($this->title);
@@ -83,7 +84,8 @@ class SForum {
         if(!empty($ptitle)) {
             $this->ptitle = "Re: ".$ptitle;
         }
-        $zawartosc = "\n\n<FORM ACTION=\"".$_SERVER['PHP_SELF']."\" METHOD=\"post\" NAME=\"frm\">\n"
+        $zawartosc = 
+		"\n\n<FORM ACTION=\"".$_SERVER['PHP_SELF']."\" METHOD=\"post\" NAME=\"frm\">\n"
         . "<TABLE><TR>\n"
         . "<TD>Заголовок темы:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_ptitle\" VALUE=\"$this->ptitle\" SIZE=\"65\"></TD>\n"
         . "</TR><TR>\n"
@@ -91,13 +93,34 @@ class SForum {
         . "</TR><TR>\n"
         . "<TD>Имя или ник:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"25\"></TD>\n"
         . "</TR><TR>\n"
-       /* . "<TD>e-mail:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_mail\" VALUE=\"\" SIZE=\"25\"></TD>\n"
-        . "</TR><TR>\n"*/
-        . "<TD COLLSPAN=\"2\"><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\"Написать\"></TD>\n"
-        . "</tr></TABLE>\n"
+        . "<TD COLLSPAN=\"2\"><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\"Написать\"></TD>\n</br>"
+				
+		."<TR><Td><input class='input' type='text' name='norobot' /></td></TR>"
+		."<TR><Td><img src='captcha.php' /></td></TR>"
+				
+		. "</tr></TABLE>\n"
         . "<INPUT TYPE=\"hidden\" NAME=\"frm_ip\" VALUE=\"".$_SERVER['REMOTE_ADDR']."\">\n"
         . "<INPUT TYPE=\"hidden\" NAME=\"frm_wid\" VALUE=\"".$this->pansw."\">\n"
         . "</FORM>\n\n";
+			
+		/*
+		"<form method='post' action='write.php'>"
+		. "<TABLE><TR>\n"
+        . "<TD>Заголовок темы:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_ptitle\" VALUE=\"$this->ptitle\" SIZE=\"65\"></TD>\n"
+        . "</TR><TR>\n"
+        . "<TD>Текст:</TD><TD><TEXTAREA NAME=\"frm_text\" cols=\"50\" rows=\"10\"></TEXTAREA></TD>\n"
+        . "</TR><TR>\n"
+        . "<TD>Имя или ник:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"25\"></TD>\n"
+        . "</TR><TR>\n"
+		
+		."<TR><Td><input class='input' type='text' name='norobot' /></td></TR>"
+		."<TR><Td><img src='captcha.php' /></td></TR>"
+		."<TR><td><input type='submit' value='Ввести' /></Td></TR>"
+	    ."<TR><Td></form></td></TR>"
+		."</table>";		
+		*/
+		
+		
         print($zawartosc);
     }
 
