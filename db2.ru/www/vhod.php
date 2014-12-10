@@ -3,10 +3,67 @@ require 'connect.php';
 //  вся процедура работает на сессиях. В сессии хранятся данные  пользователя, пока он находится на сайте. Запускается сессия в начале странички
 	session_start();
 echo "
-<html>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
-<title>Форма входа на PHP</title>
-</head><body>"?>
+<title>Вход</title>
+<link href='style.css' rel='stylesheet' type='text/css' />
+<link href='layout.css' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+   TD {
+   vertical-align: center; 
+   }
+   #col1 {
+    width: 35%; 
+   
+   }
+   #col2 {
+    width: 35%; 
+     
+   }
+   #col3 {
+    width: 30%; 
+   
+	
+   }
+    </style>
+</head>
+
+<body id='page6'>
+<div class='tail-top-right'></div>
+<div class='tail-top'>
+  <div class='tail-bottom'>
+    <div id='main'>
+      <!-- header -->
+      <div id='header'>
+        <form action='' method='post' id='form'>
+          <div>
+            <label>Поиск:</label>
+            <span>
+            <input type='text' />
+            </span></div>
+        </form>
+        <ul class='list'>
+          <li><a href='index.php'><img src='images/icon1.gif' alt='' /></a></li>
+          <li><a href='index.php'><img src='images/icon2.gif' alt='' /></a></li>
+          <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
+        </ul>
+        <ul class='site-nav'>
+          <li><a href='info_form.php'>Новый заказ</a></li>
+          <li><a href='search_user.php'>Найти заказ</a></li>
+          <li><a href='select_change.php'>Все заказы</a></li>
+          <li><a href='video/video.php'>Видео в помощь</a></li>
+          <li><a href='forum/test.php''>Форум</a></li>
+          <li class='last'><a href='vhod.php'>Выход</a></li>
+        </ul>
+        <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
+        <div class='slogan'><img src='images/slogan.png' alt='' /></div>
+      </div>
+
+
+
+
+";?>
 <?php
 require 'connect.php';
 if(isset($_SESSION['login']))
@@ -15,29 +72,59 @@ if(isset($_SESSION['login']))
     if (empty($_SESSION['login']) or empty($_SESSION['id']))
  // Если пусты, то 
     {
-				echo "<p style='margin-left:60px;'>Вы вошли на сайт, как гость</p><br>
-<!--Подключение обработчика формы-->
+				echo "
+			</br>
+        <h3>Вход</h3>
+		<table width='90%' cellpadding='5' cellspacing='5'>
+		<tr><td id='col1'></td>
+        <td id='col2'>Вы вошли на сайт, как Гость</td>
+		<td id='col3'></td></tr><tr></tr><tr></tr>
+	<tr><td id='col1'></td>
+	<td id='col2'>					
 <form id='forma' action='script1.php' method='post'>
-<h1>Форма входа</h1>
-<p>Заполните поля для входа на сайт</p>
-<p>Логин<br /><input type='text' name='login'></p>
-<p>Пароль<br /><input type='password' name='password'></p>
-<p><input type='submit' name='submit' value='Войти'>
-<!--**** Кнопка (type='submit') отправляет данные на страничку script1.php ***** --> 
+
+<p class='p1'>Логин<br /><input type='text' name='login'></p>
+<p class='p1'>Пароль<br /><input type='password' name='password'></p>
+<p class='p1'><input type='submit' name='submit' value='Войти'></p>
+</form></td><td id='col3'></td>
+</tr></table>
+	       
+		   	
 ";
 	
 	}
  else
  // Если не пусты, то 
     {
-	    echo "<br /><br />Вы вошли на сайт, как ".$_SESSION['login']."<br><br />";
-		echo ('<form action="close.php" method="POST">
-				<input type="submit" value="Выход"/>
-			</form>');
-		echo ('<form action="kassa_vecher.php" method="POST">
-				<input type="submit" value="Закрыть кассу"/>
-			</form>');	
+	    echo "  <br /><br /><table width='90%' cellpadding='5' cellspacing='0'>
+		<tr><td id='col1'></td>
+		<td id='col2'>
+		Вы вошли на сайт, как ".$_SESSION['login']."<br><br />";
+		echo ("<!--<form action='close.php' method='POST'>
+				<input type='submit' value='Выход'/>
+			</form>-->
+			<form action='kassa_vecher.php' method='POST'>
+				<input type='submit' value='Закрыть кассу'/>
+			</form> </td>
+			<td id='col3'></td>
+			</tr></table>
+			</br>
+			
+			");	
 }
 echo"
+
+<div id='footer'>
+        <div class='indent'>
+          <div class='fleft'>group of companies LeXan</div>
+          <div class='fright'>Тел.: 8(812)100-00-00</br>+7911-100-00-00</div>
+        </div>
+      </div>
+
+
+
+</div>
+  </div>
+</div>
 </body></html>"; 
 ?>

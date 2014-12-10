@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 session_start();
-if (isset($_SESSION['login'])<>'admin')
+if (isset($_SESSION['login']))
 {
 
 echo "
@@ -66,9 +66,9 @@ echo"Вы не ввели E-mail"; // выводим сообщение об ошибке
   }elseif(!preg_match("/[-a-zA-Z0-9_]{3,20}@[-a-zA-Z0-9]{2,64}\.[a-zA-Z\.]{2,9}/", $_POST['email'])){ //регулярка на проверку правильности email  
 echo"Вы неправильно ввели E-mail"; // выводим сообщение об ошибке   
   }else{ //если же ошибок нет  
-  $login = $_POST['login']; //присваеваем переменную  
-  $password = md5($_POST['password']);//присваеваем переменную и кодируем её в md5 для безопасности  
-  $email = $_POST['email'];//присваеваем переменную  
+  $login = mysql_real_escape_string($connect,(int)$_POST['login']); //присваеваем переменную  
+  $password = mysql_real_escape_string($connect,settype(md5($_POST['password']),"char"));//присваеваем переменную и КОДИРУЕМ её в md5 для безопасности  
+  $email = mysql_real_escape_string($connect,settype( $_POST['email'], "char"));//присваеваем переменную  
    
   $insert = mysql_query("INSERT INTO `users` (`login` ,`password` ,`email` ) VALUES ('$login', '$password', '$email')"); //выполняем запрос на добавление нового пользователя  
   if($insert == true){  
@@ -82,6 +82,8 @@ echo"Вы неправильно ввели E-mail"; // выводим сообщение об ошибке
 
 }  
 ?> 
+
+
 <?php 
 require 'connect.php';
 echo "
@@ -93,16 +95,21 @@ echo "
 Пароль:<br /><input name='password' type='password' size='20'><br />
 Еще раз пароль:<br /><input name='password2' type='password' size='20'><br />
 E-mail:<br /><input name='email' type='text' size='20'><br /><br />
-<input name='submit' type='submit' value='Зарегистрироваться'><br />
+
+<input name='submit' type='submit' value='Зарегистрироваться'><br /><br /><br />
 </form>
+<form method='post' action='write.php'>
+		<img src='captcha.php' /></br>
+		<input class='input' type='text' name='norobot' /></br>
+		<input type='submit' value='Ввести' />
+	</form>
 </div>
 </body>
 </html> ";
 }
 else 
 {
-echo "Эта страница доступна только администратору </br>
-<a href='menu.php'>Назад в меню</a></br>";
+header('location:vhod.php');
 
 }
 ?>

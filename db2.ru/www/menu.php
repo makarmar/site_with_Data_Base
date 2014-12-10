@@ -6,9 +6,10 @@ if (isset($_SESSION['login']))
 
 echo "
 <!DOCTYPE HTML>
-<html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=windows-1251'>
+<title>Главное меню</title>
 </head>
 <body> 
 
@@ -19,10 +20,10 @@ echo "
 <a href='video/video.php'>Видео в помощь</a></br></br>
 <a href='forum/test.php'>Форум</a></br></br>
 <a href='vhod.php'>На выход</a></br></br>
+
 <a href='reg.php'>Регистрация нового пользователя</a>
 </body>
-</html> 
-";
+</html> ";
 
 }
 

@@ -5,20 +5,91 @@ if (isset($_SESSION['login']))
 {
 
 echo "
-<html>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
 <title>Касса на вечер</title>
-</head><body>
+<link href='style.css' rel='stylesheet' type='text/css' />
+<link href='layout.css' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+   TD {
+   vertical-align: center; 
+   }
+   #col1 {
+    width: 35%; 
+   
+   }
+   #col2 {
+    width: 35%; 
+     
+   }
+   #col3 {
+    width: 30%; 
+   
+	
+   }
+    </style>
+</head>
+
+<body id='page6'>
+<div class='tail-top-right'></div>
+<div class='tail-top'>
+  <div class='tail-bottom'>
+    <div id='main'>
+      <!-- header -->
+      <div id='header'>
+        <form action='' method='post' id='form'>
+          <div>
+            <label>Поиск:</label>
+            <span>
+            <input type='text' />
+            </span></div>
+        </form>
+        <ul class='list'>
+          <li><a href='index.php'><img src='images/icon1.gif' alt='' /></a></li>
+          <li><a href='index.php'><img src='images/icon2.gif' alt='' /></a></li>
+          <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
+        </ul>
+        <ul class='site-nav'>
+          <li><a href='info_form.php'>Новый заказ</a></li>
+          <li><a href='search_user.php'>Найти заказ</a></li>
+          <li><a href='select_change.php'>Все заказы</a></li>
+          <li><a href='video/video.php'>Видео в помощь</a></li>
+          <li><a href='forum/test.php''>Форум</a></li>
+          <li class='last'><a href='vhod.php'>Выход</a></li>
+        </ul>
+        <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
+        <div class='slogan'><img src='images/slogan.png' alt='' /></div>
+      </div>
+</br></br>
+
+<table width='90%' cellpadding='5' cellspacing='0'>
+<tr><td id='col1'></td>
+<td id='col2'>
 <form action='kassa_sc.php' method='post' name='forma'>
-<fieldset>
+
 <label for='Kassa_vsego'><div class='no_print'>Всего в кассе:</div></label><br/> 
 <input type='text' name='Kassa_vsego' size='10'><br/> </br>
 <label for='V_bank'><div class='no_print'>Отложено в банк:</div></label><br/> 
-<input type='text' name='V_bank' size='10'><br/> 
-</fieldset>
-<br/>
-<input id='submit' type='submit' value='ОК!'><br/>
+<input type='text' name='V_bank' size='10'><br/> <br/>
 
+<input id='submit' type='submit' value='ОК!'><br/><br/>
+</td>
+<td id='col3'></td>
+</tr>
+</table>
+
+
+<div id='footer'>
+        <div class='indent'>
+          <div class='fleft'>group of companies LeXan</div>
+          <div class='fright'>Тел.: 8(812)100-00-00</br>+7911-100-00-00</div>
+        </div>
+      </div>
+
+</div>
+  </div>
+</div>
 </body></html>
 ";
 

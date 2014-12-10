@@ -1,11 +1,11 @@
 <?php
-require 'connect.php';
+	require 'connect.php';
 	session_start();
 	if (md5($_POST['norobot']) == $_SESSION['randomnr2'])	{ 
 		
-			echo "ÐžÑ‚Ð»Ð¸Ñ‡Ð½Ð¾ , ÐºÐ°Ð¶ÐµÑ‚ÑÑ, Ñ‡Ñ‚Ð¾ Ð²Ñ‹ Ð½Ðµ Ñ€Ð¾Ð±Ð¾Ñ‚";
+			echo "Îòëè÷íî , êàæåòñÿ, ÷òî âû íå ðîáîò";
 	}	else {  
 		
-			echo "Ð²Ñ‹ Ð²ÐµÑÑŒÐ¼Ð° Ð½Ð°Ð´Ð¾ÐµÐ´Ð»Ð¸Ð²Ñ‹Ð¹ Ð±Ð¾Ñ‚!";
+			echo "âû âåñüìà íàäîåäëèâûé áîò!";
 	}
 ?>

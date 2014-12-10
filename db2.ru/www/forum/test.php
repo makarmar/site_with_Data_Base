@@ -1,5 +1,61 @@
 <?php
 require_once("SForum_class.php");
+echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<title>Все заказы</title>
+<link href='style.css' rel='stylesheet' type='text/css' />
+<link href='layout.css' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+   TD {
+   vertical-align: center; 
+   }
+   #col1 {
+    width: 15%; 
+      }
+   #col2 {
+    width: 45%; 
+        }
+   #col3 {
+    width: 10%; 
+      }
+   #col4 {
+    width: 35%; 
+      }
+    </style>
+</head>
+
+<body id='page6'>
+<div class='tail-top-right'></div>
+<div class='tail-top'>
+  <div class='tail-bottom'>
+    <div id='main'>
+      <!-- header -->
+      <div id='header'>
+        <form action='' method='post' id='form'>
+          <div>
+            <label>Поиск:</label>
+            <span>
+            <input type='text' />
+            </span></div>
+        </form>
+        <ul class='list'>
+          <li><a href='index.php'><img src='images/icon1.gif' alt='' /></a></li>
+          <li><a href='index.php'><img src='images/icon2.gif' alt='' /></a></li>
+          <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
+        </ul>
+        <ul class='site-nav'>
+          <li><a href='../info_form.php'>Новый заказ</a></li>
+          <li><a href='../search_user.php'>Найти заказ</a></li>
+          <li><a href='../select_change.php'>Все заказы</a></li>
+          <li><a href='../video/video.php'>Видео в помощь</a></li>
+          <li><a href='test.php''>Форум</a></li>
+          <li class='last'><a href='../vhod.php'>Выход</a></li>
+        </ul>
+        <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
+        <div class='slogan'><img src='images/slogan.png' alt='' /></div>
+      </div>
+	  </br>";
 //require_once("email_validation.php");
 
 //$validator=new email_validation_class;
@@ -7,18 +63,10 @@ require_once("SForum_class.php");
 $forum->Show_SFname();
 
 $forum->Main_page();
-print("<br><br>\n");
+print("<br>\n");
 
 if (isset($_POST['submit'])) {
-    /*$for_mail = $_POST['frm_mail'];
-    if (!empty($_POST['frm_mail'])) {
-	    $valmail = $validator->ValidateEmailAddress($_POST['frm_mail']);
-        if ($valmail == 0) {
-            echo "Your mail was invalid so was droped!<br><br>\n";
-            $for_mail = "";      // if mail invalid then dropped
-        }
-    }*/
-
+    
 	//session_start();
 	if (md5($_POST['norobot']) == $_SESSION['randomnr2'])
 	 {
@@ -41,6 +89,20 @@ if (isset($_GET['wid'])) {
 
 $forum->Show_frm($forum->ptitle);
 
-print("<br><br>\n");
-$forum->Main_page();
+print("<br>\n");
+
+
+echo "<div id='footer'>
+        <div class='indent'>
+          <div class='fleft'>group of companies LeXan</div>
+          <div class='fright'>Тел.: 8(812)100-00-00</br>+7911-100-00-00</div>
+        </div>
+      </div>
+
+
+
+</div>
+  </div>
+</div>
+</body></html>";
 ?>

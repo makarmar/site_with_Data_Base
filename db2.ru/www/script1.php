@@ -61,7 +61,8 @@ if ($myrow['password']== md5( "$password" )){
 	// "VALUES(now(), '{$_SESSION['login']}');"; 
     mysql_query($insert);
 	
-	echo "<br /><br />Поздравляем! Вы успешно вошли на сайт! <br /><a href='http://db2.ru/menu.php'>Главная страница</a><br /><a href='/php-uroki/avtorizaciya/reg.php'>Регистрация</a>";
+	echo "<br /><br />Поздравляем! Вы успешно вошли на сайт! <br />
+	<a href='http://db2.ru/menu.php'>Главная страница</a><br /><a href='/php-uroki/avtorizaciya/reg.php'>Регистрация</a>";
     }
 
 else {

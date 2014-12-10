@@ -61,7 +61,7 @@
 
 
 class SForum {
-    var $SFname = "SForum";
+    var $SFname = "<h3>Форум</h3>";
     var $ptitle;
     var $react;              // number of answers in a thread
     var $pansw;
@@ -86,40 +86,24 @@ class SForum {
         }
         $zawartosc = 
 		"\n\n<FORM ACTION=\"".$_SERVER['PHP_SELF']."\" METHOD=\"post\" NAME=\"frm\">\n"
-        . "<TABLE><TR>\n"
-        . "<TD>Заголовок темы:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_ptitle\" VALUE=\"$this->ptitle\" SIZE=\"65\"></TD>\n"
+        . "</br><table width='90%' cellpadding='5' cellspacing='7'><TR>\n"
+        . "<td id='col1'>Заголовок темы:</TD><td id='col2'><INPUT TYPE=\"text\" NAME=\"frm_ptitle\" VALUE=\"$this->ptitle\" SIZE=\"30\"></TD>\n"
+        . "</TR><TR>"
+        . "<td id='col1'>Текст:</TD><td id='col2'><TEXTAREA NAME=\"frm_text\" cols=\"50\" rows=\"10\"></TEXTAREA></TD>\n"
+        . "<td id='col4'><img src='captcha.php' />"
+		. "</br></br><input class='input' type='text' name='norobot' size='12' />"
+		. "</br></br><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\" Написать \"></td>"
+		. "</TR><TR>\n"
+        . "<td id='col1'>Имя или ник:</TD><td id='col2'><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"30\"></TD>\n"
         . "</TR><TR>\n"
-        . "<TD>Текст:</TD><TD><TEXTAREA NAME=\"frm_text\" cols=\"50\" rows=\"10\"></TEXTAREA></TD>\n"
-        . "</TR><TR>\n"
-        . "<TD>Имя или ник:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"25\"></TD>\n"
-        . "</TR><TR>\n"
-        . "<TD COLLSPAN=\"2\"><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\"Написать\"></TD>\n</br>"
-				
-		."<TR><Td><input class='input' type='text' name='norobot' /></td></TR>"
-		."<TR><Td><img src='captcha.php' /></td></TR>"
+        
 				
 		. "</tr></TABLE>\n"
         . "<INPUT TYPE=\"hidden\" NAME=\"frm_ip\" VALUE=\"".$_SERVER['REMOTE_ADDR']."\">\n"
         . "<INPUT TYPE=\"hidden\" NAME=\"frm_wid\" VALUE=\"".$this->pansw."\">\n"
         . "</FORM>\n\n";
 			
-		/*
-		"<form method='post' action='write.php'>"
-		. "<TABLE><TR>\n"
-        . "<TD>Заголовок темы:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_ptitle\" VALUE=\"$this->ptitle\" SIZE=\"65\"></TD>\n"
-        . "</TR><TR>\n"
-        . "<TD>Текст:</TD><TD><TEXTAREA NAME=\"frm_text\" cols=\"50\" rows=\"10\"></TEXTAREA></TD>\n"
-        . "</TR><TR>\n"
-        . "<TD>Имя или ник:</TD><TD><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"25\"></TD>\n"
-        . "</TR><TR>\n"
-		
-		."<TR><Td><input class='input' type='text' name='norobot' /></td></TR>"
-		."<TR><Td><img src='captcha.php' /></td></TR>"
-		."<TR><td><input type='submit' value='Ввести' /></Td></TR>"
-	    ."<TR><Td></form></td></TR>"
-		."</table>";		
-		*/
-		
+			
 		
         print($zawartosc);
     }
@@ -173,7 +157,7 @@ class SForum {
                 //number of reactions
                 $this->react=$row1['num'];
                 if ($row['for_name'] == "") {
-                    $row['for_name'] = "Guest";
+                    $row['for_name'] = "Гость";
                 }
                 $this->ptitle = stripslashes($row['for_ptitle']);
                 print("<tr><TD><A HREF=\"".$_SERVER['PHP_SELF']."?wid=".$row['id']."\">".$this->ptitle."</A></TD><TD ALIGN=\"center\">Ответов:&nbsp;".$this->react."</TD><TD ALIGN=\"center\"  WIDTH=\"20%\">".$row['for_name']."</TD><TD ALIGN=\"center\"  WIDTH=\"20%\">".$row['for_dataw']."</TD></tr>\n\n");
@@ -199,16 +183,10 @@ class SForum {
                 $this->ptitle = stripslashes($row['for_ptitle']);
                 $this->text = nl2br(stripslashes($row['for_text']));
                 if ($row['for_name'] == "") {
-                    $row['for_name'] = "Goњж";
+                    $row['for_name'] = "Гость";
                 }
-                /*if ($row['for_mail'] !== "") {
-                    $pmail = "<A HREF=\"mailto:".$row['for_mail']."\">";
-                    $kmail = "</a>";
-                } else {
-                    $pmail = NULL;
-                    $kmail = NULL;
-                }*/
-                print("<tr><TD><b>".$this->ptitle."</b><br><div ALIGN=\"right\"><i>     <FONT SIZE=\"1\">".$row['for_data']."</FONT></i></DIV>\n\n");
+                
+                print("<tr><TD><b>".$this->ptitle."</b><br><div ALIGN=\"right\"><i><FONT SIZE=\"1\">".$row['for_name']."___".$row['for_data']."</FONT></i></DIV>\n\n");
                 print("<hr>".$this->text."<br><br></TD></tr>\n\n");
             }
             print("</TABLE>\n");
@@ -223,8 +201,8 @@ class SForum {
 
     // Main_page: Show back-to-main link
     function Main_page() {
-        print("<A HREF=\"".$_SERVER['PHP_SELF']."\">На главную</A>\n</br></br>");
-		print("<a href='../menu.php'>В меню</a>\n");
+        print("<A HREF=\"".$_SERVER['PHP_SELF']."\">К темам</A>\n</br></br>");
+		
 		
 		    }
 }
