@@ -1,4 +1,7 @@
 <?php
+  header('Content-Type: text/html; charset= utf-8');
+?>
+<?php
 require 'connect.php';
 session_start();
 if (isset($_SESSION['login']))
@@ -7,25 +10,93 @@ if (isset($_SESSION['login']))
 echo "
 
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
-<meta http-equiv='Content-Type' content='text/html; charset=windows-1251'>
-<title>Регистрация</title>";
- ?>
+<title>Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ</title>
+<link href='style.css' rel='stylesheet' type='text/css' />
+<link href='layout.css' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+   TD {
+   vertical-align: center; 
+   }
+   #col1 {
+    width: 35%; 
+      }
+   #col2 {
+    width: 35%; 
+        }
+   #col3 {
+    width: 30%; 
+      }
+	  
+	  .button_example{
+border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:16px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+ background-color: #ffc579; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc579), to(#fb9d23));
+ background-image: -webkit-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -moz-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -ms-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -o-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: linear-gradient(to bottom, #ffc579, #fb9d23);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffc579, endColorstr=#fb9d23);
+}
 
+.button_example:hover{
+ border:1px solid #ff9913;
+ background-color: #ffaf46; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffaf46), to(#e78404));
+ background-image: -webkit-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -moz-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -ms-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -o-linear-gradient(top, #ffaf46, #e78404);
+ background-image: linear-gradient(to bottom, #ffaf46, #e78404);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffaf46, endColorstr=#e78404);
+}
+    </style>
+</head>
+
+<body id='page6'>
+<div class='tail-top-right'></div>
+<div class='tail-top'>
+  <div class='tail-bottom'>
+    <div id='main'>
+      <!-- header -->
+      <div id='header'>
+        <form action='' method='post' id='form'>
+          <div>
+            <label>РџРѕРёСЃРє:</label>
+            <span>
+            <input type='text' />
+            </span></div>
+        </form>
+        <ul class='list'>
+          <li><a href='home.php'><img src='images/icon1.gif' alt='' /></a></li>
+          <li><a href='home.php'><img src='images/icon2.gif' alt='' /></a></li>
+          <li class='last'><a href='home.php'><img src='images/icon3.gif' alt='' /></a></li>
+        </ul>
+        <ul class='site-nav'>
+          <li><a href='info_form.php'>РќРѕРІС‹Р№ Р·Р°РєР°Р·</a></li>
+          <li><a href='search_user.php'>РќР°Р№С‚Рё Р·Р°РєР°Р·</a></li>
+          <li><a href='select_change.php'>Р’СЃРµ Р·Р°РєР°Р·С‹</a></li>
+          <li><a href='video/video.php'>Р’РёРґРµРѕ РІ РїРѕРјРѕС‰СЊ</a></li>
+          <li><a href='forum/test.php''>Р¤РѕСЂСѓРј</a></li>
+          <li class='last'><a href='vhod.php'>Р’С‹С…РѕРґ</a></li>
+        </ul>
+        <div class='logo'><a href='home.php'><img src='images/logo.png' alt='' /></a></div>
+        <div class='slogan'><img src='images/slogan.png' alt='' /></div>
+      </div>
+	  </br>
+	  ";
+	  ?>
  
  
 <?php  
 require 'connect.php';
-$config = array(); // указываем, что переменная $config это массив  
-$config['server'] = "localhost"; //сервер MySQL. Обычно это localhost  
-$config['login'] ="sa"; //пользователь MySQL  
-$config['passw'] = "1"; //пароль от пользователя MySQL  
-$config['name_db'] = "site"; //название нашей БД  
+$config = array(); // СѓРєР°Р·С‹РІР°РµРј, С‡С‚Рѕ РїРµСЂРµРјРµРЅРЅР°СЏ $config СЌС‚Рѕ РјР°СЃСЃРёРІ  
+$config['server'] = "localhost"; //СЃРµСЂРІРµСЂ MySQL. РћР±С‹С‡РЅРѕ СЌС‚Рѕ localhost  
+$config['login'] ="sa"; //РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ MySQL  
+$config['passw'] = "1"; //РїР°СЂРѕР»СЊ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ MySQL  
+$config['name_db'] = "site"; //РЅР°Р·РІР°РЅРёРµ РЅР°С€РµР№ Р‘Р”  
 
-$connect = mysql_connect($config['server'], $config['login'], $config['passw']) or die("Error!"); // подключаемся к MySQL или, в случаи  ошибки, прекращаем выполнение кода 
-mysql_select_db($config['name_db'], $connect) or die("Error!"); // выбираем БД  или, в случаии ошибки, прекращаем выполнение кода  
+$connect = mysql_connect($config['server'], $config['login'], $config['passw']) or die("Error!"); // РїРѕРґРєР»СЋС‡Р°РµРјСЃСЏ Рє MySQL РёР»Рё, РІ СЃР»СѓС‡Р°Рё  РѕС€РёР±РєРё, РїСЂРµРєСЂР°С‰Р°РµРј РІС‹РїРѕР»РЅРµРЅРёРµ РєРѕРґР° 
+mysql_select_db($config['name_db'], $connect) or die("Error!"); // РІС‹Р±РёСЂР°РµРј Р‘Р”  РёР»Рё, РІ СЃР»СѓС‡Р°РёРё РѕС€РёР±РєРё, РїСЂРµРєСЂР°С‰Р°РµРј РІС‹РїРѕР»РЅРµРЅРёРµ РєРѕРґР°  
 ?>
 
 <?php 
@@ -42,40 +113,40 @@ echo "
 
 
 <?php  
-if(isset($_POST['submit'])){ //выполняем нижеследующий код, только если нажата кнопка 
-$query = mysql_query("SELECT * FROM `users`  WHERE `login`='".$_POST['login']."'"); //отправляем запрос на выборку всего содержимого , где поле логин равно переменной $login  
-  $row = mysql_num_rows($query); // считаем количество рядов результата запроса  
-if(empty($_POST['login'])){ //если переменная логина пуста или не существует  
-echo"Вы не ввели логин"; // выводим сообщение об ошибке  
-  }elseif(!preg_match("/[-a-zA-Z0-9]{3,15}/", $_POST['login'])){ //если переменная не соответствует шаблону -a-zA-Z0-9  
-echo"Вы неправильно ввели логин"; // выводим сообщение об ошибке   
-  }elseif(empty($_POST['password'])){ //если переменная логина пуста или не существует  
-echo"Вы не ввели пароль"; // выводим сообщение об ошибке  
-  }elseif($row > 0){ //если переменная больше 0  
-echo"Такой пользователь уже существует!"; // выводим сообщение об ошибке  
-  }elseif(!preg_match("/[-a-zA-Z0-9]{3,30}/", $_POST['password'])){ //если переменная не соответствует шаблону -a-zA-Z0-9  
-echo"Вы неправильно ввели пароль"; // выводим сообщение об ошибке   
-  }elseif(empty($_POST['password2'])){ //если переменная логина пуста или не существует  
-echo"Вы не ввели подтверждение пароля"; // выводим сообщение об ошибке  
-  }elseif(!preg_match("/[-a-zA-Z0-9]{3,30}/", $_POST['password2'])){ //если переменная не соответствует шаблону -a-zA-Z0-9  
-echo"Вы неправильно ввели подтверждение пароля"; // выводим сообщение об ошибке   
-  }elseif($_POST['password'] != $_POST['password2']){ //если переменная пароля и переенная  повтора пароля не одинаковы  
-echo"Вы неправильно ввели подтверждение пароля"; // выводим сообщение об ошибке   
-  }elseif(empty($_POST['email'])){ //если переменная E-mail'a пуста   
-echo"Вы не ввели E-mail"; // выводим сообщение об ошибке   
-  }elseif(!preg_match("/[-a-zA-Z0-9_]{3,20}@[-a-zA-Z0-9]{2,64}\.[a-zA-Z\.]{2,9}/", $_POST['email'])){ //регулярка на проверку правильности email  
-echo"Вы неправильно ввели E-mail"; // выводим сообщение об ошибке   
-  }else{ //если же ошибок нет  
-  $login = mysql_real_escape_string($connect,(int)$_POST['login']); //присваеваем переменную  
-  $password = mysql_real_escape_string($connect,settype(md5($_POST['password']),"char"));//присваеваем переменную и КОДИРУЕМ её в md5 для безопасности  
-  $email = mysql_real_escape_string($connect,settype( $_POST['email'], "char"));//присваеваем переменную  
+if(isset($_POST['submit'])){ //РІС‹РїРѕР»РЅСЏРµРј РЅРёР¶РµСЃР»РµРґСѓСЋС‰РёР№ РєРѕРґ, С‚РѕР»СЊРєРѕ РµСЃР»Рё РЅР°Р¶Р°С‚Р° РєРЅРѕРїРєР° 
+$query = mysql_query("SELECT * FROM `users`  WHERE `login`='".$_POST['login']."'"); //РѕС‚РїСЂР°РІР»СЏРµРј Р·Р°РїСЂРѕСЃ РЅР° РІС‹Р±РѕСЂРєСѓ РІСЃРµРіРѕ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ , РіРґРµ РїРѕР»Рµ Р»РѕРіРёРЅ СЂР°РІРЅРѕ РїРµСЂРµРјРµРЅРЅРѕР№ $login  
+  $row = mysql_num_rows($query); // СЃС‡РёС‚Р°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ СЂРµР·СѓР»СЊС‚Р°С‚Р° Р·Р°РїСЂРѕСЃР°  
+if(empty($_POST['login'])){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ Р»РѕРіРёРЅР° РїСѓСЃС‚Р° РёР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚  
+echo"Р’С‹ РЅРµ РІРІРµР»Рё Р»РѕРіРёРЅ"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ  
+  }elseif(!preg_match("/[-a-zA-Z0-9]{3,15}/", $_POST['login'])){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С€Р°Р±Р»РѕРЅСѓ -a-zA-Z0-9  
+echo"Р’С‹ РЅРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµР»Рё Р»РѕРіРёРЅ"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ   
+  }elseif(empty($_POST['password'])){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ Р»РѕРіРёРЅР° РїСѓСЃС‚Р° РёР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚  
+echo"Р’С‹ РЅРµ РІРІРµР»Рё РїР°СЂРѕР»СЊ"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ  
+  }elseif($row > 0){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ Р±РѕР»СЊС€Рµ 0  
+echo"РўР°РєРѕР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ  
+  }elseif(!preg_match("/[-a-zA-Z0-9]{3,30}/", $_POST['password'])){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С€Р°Р±Р»РѕРЅСѓ -a-zA-Z0-9  
+echo"Р’С‹ РЅРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµР»Рё РїР°СЂРѕР»СЊ"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ   
+  }elseif(empty($_POST['password2'])){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ Р»РѕРіРёРЅР° РїСѓСЃС‚Р° РёР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚  
+echo"Р’С‹ РЅРµ РІРІРµР»Рё РїРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ РїР°СЂРѕР»СЏ"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ  
+  }elseif(!preg_match("/[-a-zA-Z0-9]{3,30}/", $_POST['password2'])){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С€Р°Р±Р»РѕРЅСѓ -a-zA-Z0-9  
+echo"Р’С‹ РЅРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµР»Рё РїРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ РїР°СЂРѕР»СЏ"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ   
+  }elseif($_POST['password'] != $_POST['password2']){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ РїР°СЂРѕР»СЏ Рё РїРµСЂРµРµРЅРЅР°СЏ  РїРѕРІС‚РѕСЂР° РїР°СЂРѕР»СЏ РЅРµ РѕРґРёРЅР°РєРѕРІС‹  
+echo"Р’С‹ РЅРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµР»Рё РїРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ РїР°СЂРѕР»СЏ"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ   
+  }elseif(empty($_POST['email'])){ //РµСЃР»Рё РїРµСЂРµРјРµРЅРЅР°СЏ E-mail'a РїСѓСЃС‚Р°   
+echo"Р’С‹ РЅРµ РІРІРµР»Рё E-mail"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ   
+  }elseif(!preg_match("/[-a-zA-Z0-9_]{3,20}@[-a-zA-Z0-9]{2,64}\.[a-zA-Z\.]{2,9}/", $_POST['email'])){ //СЂРµРіСѓР»СЏСЂРєР° РЅР° РїСЂРѕРІРµСЂРєСѓ РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё email  
+echo"Р’С‹ РЅРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµР»Рё E-mail"; // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ   
+  }else{ //РµСЃР»Рё Р¶Рµ РѕС€РёР±РѕРє РЅРµС‚  
+  $login = mysql_real_escape_string($connect,(int)$_POST['login']); //РїСЂРёСЃРІР°РµРІР°РµРј РїРµСЂРµРјРµРЅРЅСѓСЋ  
+  $password = mysql_real_escape_string($connect,settype(md5($_POST['password']),"char"));//РїСЂРёСЃРІР°РµРІР°РµРј РїРµСЂРµРјРµРЅРЅСѓСЋ Рё РљРћР”РР РЈР•Рњ РµС‘ РІ md5 РґР»СЏ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё  
+  $email = mysql_real_escape_string($connect,settype( $_POST['email'], "char"));//РїСЂРёСЃРІР°РµРІР°РµРј РїРµСЂРµРјРµРЅРЅСѓСЋ  
    
-  $insert = mysql_query("INSERT INTO `users` (`login` ,`password` ,`email` ) VALUES ('$login', '$password', '$email')"); //выполняем запрос на добавление нового пользователя  
+  $insert = mysql_query("INSERT INTO `users` (`login` ,`password` ,`email` ) VALUES ('$login', '$password', '$email')"); //РІС‹РїРѕР»РЅСЏРµРј Р·Р°РїСЂРѕСЃ РЅР° РґРѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ  
   if($insert == true){  
-  echo "Вы успешно зарегистрированы!</n></n> "; 
-  echo "<a href='vhod.php'>Вход на сайт</a>";
+  echo "Р’С‹ СѓСЃРїРµС€РЅРѕ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹!</n></n> "; 
+  echo "<a href='vhod.php'>Р’С…РѕРґ РЅР° СЃР°Р№С‚</a>";
   }else{  
-  echo "Непредвиденная ошибка!";  
+  echo "РќРµРїСЂРµРґРІРёРґРµРЅРЅР°СЏ РѕС€РёР±РєР°!";  
   }  
    
   }  
@@ -91,25 +162,36 @@ echo "
 
 
 <form action='' method='post' enctype='multipart/form-data'>
-Логин:<br /><input name='login' type='text' size='20'><br />
-Пароль:<br /><input name='password' type='password' size='20'><br />
-Еще раз пароль:<br /><input name='password2' type='password' size='20'><br />
+Р›РѕРіРёРЅ:<br /><input name='login' type='text' size='20'><br />
+РџР°СЂРѕР»СЊ:<br /><input name='password' type='password' size='20'><br />
+Р•С‰Рµ СЂР°Р· РїР°СЂРѕР»СЊ:<br /><input name='password2' type='password' size='20'><br />
 E-mail:<br /><input name='email' type='text' size='20'><br /><br />
 
-<input name='submit' type='submit' value='Зарегистрироваться'><br /><br /><br />
+<input name='submit' type='submit' value='Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ' class='button_example'><br /><br /><br />
 </form>
-<form method='post' action='write.php'>
-		<img src='captcha.php' /></br>
-		<input class='input' type='text' name='norobot' /></br>
-		<input type='submit' value='Ввести' />
-	</form>
+
 </div>
-</body>
-</html> ";
+
+
+<div id='footer'>
+        <div class='indent'>
+          <div class='fleft'>group of companies LeXan</div>
+          <div class='fright'>РўРµР».: 8(812)100-00-00</br>+7911-100-00-00</div>
+        </div>
+      </div>
+
+
+
+</div>
+  </div>
+</div>
+</body></html>
+";
+
 }
+
 else 
 {
 header('location:vhod.php');
-
 }
 ?>

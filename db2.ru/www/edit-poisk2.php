@@ -9,30 +9,31 @@ if (isset($_SESSION['login']))
 
 echo "
 
+
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
-<title>Найдено</title>
+<title>Редактирование</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <link href='layout.css' rel='stylesheet' type='text/css' />
+<style type='text/css' > 
+  div.no {display: none; } 
+</style> 
 <style type='text/css'>
    TD {
    vertical-align: center; 
    }
    #col1 {
-    width: 30%; 
-   
-   }
+    width: 35%; 
+      }
    #col2 {
-    width: 50%; 
-     
-   }
+    width: 35%; 
+        }
    #col3 {
-    width: 20%; 
-   
-   }
-   
-   .button_example{
+    width: 30%; 
+      }
+	  
+	  .button_example{
 border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:16px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
  background-color: #ffc579; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc579), to(#fb9d23));
  background-image: -webkit-linear-gradient(top, #ffc579, #fb9d23);
@@ -84,36 +85,73 @@ border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;bo
         <div class='logo'><a href='home.php'><img src='images/logo.png' alt='' /></a></div>
         <div class='slogan'><img src='images/slogan.png' alt='' /></div>
       </div>
-</br>
-
-
-<form action='edit-poisk.php' method='post'>
-";
-?>
-
+	  </br>
+	  ";
+	  ?>
 <?php
-
 require 'connect.php';
-$Nomer = trim($_REQUEST['Nomer']);
-
-$sql_select = "SELECT id, Nomer, Data, Familia, Name, Otchestvo FROM zakaz WHERE Nomer='$Nomer' ";
-$result = mysql_query($sql_select);
+$id = $_REQUEST['user'];
+$select_sql = "SELECT * FROM zakaz WHERE id= $id ";
+$result = mysql_query($select_sql);
 $row = mysql_fetch_array($result);
+printf("<form action='update2.php' method='post' name='forma'>
 
-do
-{
-printf("<input type='radio' name='user' value='%s' checked='checked'>%s %s %s %s %s<br/><br/>", $row['id'], $row['Nomer'], $row['Data'], $row['Familia'], $row['Name'], $row['Otchestvo']);	
+<input type='hidden' name='id'  value='%s' ><br/>
+<div class='no'>
+<label for='Nomer'>Номер:</label><br/>
+<input type='text' name='Nomer' size='30' value='%s' readonly='readonly'><br/>
+<label for='Familia'>Фамилия:</label><br/>
+<input type='text' name='Familia' size='30' value='%s'><br/>
+<label for='Name'>Имя:</label><br/>
+<input type='text' name='Name' size='30' value='%s'><br/>
+<label for='Otchestvo'>Отчество:</label><br/>
+<input type='text' name='Otchestvo' size='30' value='%s'><br/>
+<label for='Telefon'>Телефон:</label><br/>
+<input type='text' name='Telefon' size='30' value='%s'><br/>
+<label for='Email'>Email:</label><br/>
+<input type='text' name='Email' size='30' value='%s'><br/>
 
-}
-while($row = mysql_fetch_array($result));
+<label for='Vid_ustroystva'>Вид устройства:</label><br/>
+<input type='text' name='Vid_ustroystva' size='30' value='%s'><br/>
+
+<label for='Proizvoditel'>Производитель:</label><br/>
+<input type='text' name='Proizvoditel' size='30' value='%s'><br/>
+ 
+<label for='Model'>Модель:</label><br/>
+<input type='text' name='Model' size='30' value='%s'><br/>
+<label for='Defekti'>Дефекты:</label><br/>
+<input type='text' name='Defekti' size='30' value='%s'><br/>
+ 
+<label for='Vid_polomki'>Вид поломки:</label><br/>
+<input type='text' name='Vid_polomki' size='30' value='%s'><br/>
 
 
-echo 
-"
-<input type='submit' value='Редактировать заказ' class='button_example'>
+<label for='Stoimost_pabot'>Стоимость работ:</label><br/>
+<input type='text' name='Stoimost_pabot' size='30' value='%s'><br/>
+<label for='Detal'>Деталь:</label><br/>
+<input type='text' name='Detal' size='30' value='%s'><br/>
+<label for='Stoimost_detali'>Стоимость детали:</label><br/>
+<input type='text' name='Stoimost_detali' size='30' value='%s'><br/>
+<label for='Status'>Статус:</label><br/>
+<input type='text' name='Status' size='30' value='%s' readonly='readonly'><br/>
+<label for='Remonter'>Ремонтер:</label><br/>
+<input type='text' name='Remonter' size='30' value='%s' readonly='readonly'><br/>
+</div>
+<label for='Kod_ustr'>Код устройства:</label><br/>
+<input type='text' name='Kod_ustr' size='30' value='%s' ><br/>
 
-</br>
-</br>
+
+<br/>
+
+<input id='submit' type='submit' value='Закрыть заказ' class='button_example'><br/></br>
+
+</form>",$row['id'], $row['Nomer'],  $row['Familia'], $row['Name'], $row['Otchestvo'], $row['Telefon'], $row['Email'], $row['Vid_ustroystva'], $row['Proizvoditel'],  $row['Model'], $row['Defekti'], $row['Vid_polomki'], $row['Stoimost_pabot'], $row['Detal'], $row['Stoimost_detali'], $row['Status'], $row['Remonter'], $row['Kod_ustr']);
+?>
+<?php
+echo "
+
+
+
 
 <div id='footer'>
         <div class='indent'>
@@ -127,7 +165,8 @@ echo
 </div>
   </div>
 </div>
-</body></html> ";
+</body></html>
+";
 
 }
 

@@ -46,9 +46,9 @@ echo "
             </span></div>
         </form>
         <ul class='list'>
-          <li><a href='index.php'><img src='images/icon1.gif' alt='' /></a></li>
-          <li><a href='index.php'><img src='images/icon2.gif' alt='' /></a></li>
-          <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
+          <li><a href='home.php'><img src='images/icon1.gif' alt='' /></a></li>
+          <li><a href='home.php'><img src='images/icon2.gif' alt='' /></a></li>
+          <li class='last'><a href='home.php'><img src='images/icon3.gif' alt='' /></a></li>
         </ul>
         <ul class='site-nav'>
           <li><a href='info_form.php'>Новый заказ</a></li>
@@ -58,7 +58,7 @@ echo "
           <li><a href='forum/test.php''>Форум</a></li>
           <li class='last'><a href='vhod.php'>Выход</a></li>
         </ul>
-        <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
+        <div class='logo'><a href='home.php'><img src='images/logo.png' alt='' /></a></div>
         <div class='slogan'><img src='images/slogan.png' alt='' /></div>
       </div>
 	  </br>

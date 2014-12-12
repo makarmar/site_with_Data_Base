@@ -87,7 +87,7 @@ border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;bo
 </br>
 
 
-<form action='edit-poisk.php' method='post'>
+<form action='edit-poisk2.php' method='post'>
 ";
 ?>
 
@@ -110,7 +110,7 @@ while($row = mysql_fetch_array($result));
 
 echo 
 "
-<input type='submit' value='Редактировать заказ' class='button_example'>
+<input type='submit' value='ОК!' class='button_example'>
 
 </br>
 </br>

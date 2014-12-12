@@ -95,7 +95,7 @@ class SForum {
         . "<td id='col1'>Текст:</TD><td id='col2'><TEXTAREA NAME=\"frm_text\" cols=\"50\" rows=\"10\"></TEXTAREA></TD>\n"
         . "<td id='col4'><img src='captcha.php' />"
 		. "</br></br><input class='input' type='text' name='norobot' size='12' />"
-		. "</br></br><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\" Написать \"></td>"
+		. "</br></br><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\" Написать \" class='button_example'></td>"
 		. "</TR><TR>\n"
         . "<td id='col1'>Имя или ник:</TD><td id='col2'><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"30\"></TD>\n"
         . "</TR><TR>\n"

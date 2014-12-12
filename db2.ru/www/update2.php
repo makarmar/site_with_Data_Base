@@ -9,11 +9,10 @@ if (isset($_SESSION['login']))
 
 echo "
 
-
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
-<title>Редактирование</title>
+<title>Все заказы</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <link href='layout.css' rel='stylesheet' type='text/css' />
 <style type='text/css'>
@@ -21,34 +20,14 @@ echo "
    vertical-align: center; 
    }
    #col1 {
-    width: 35%; 
+    width: 40%; 
       }
    #col2 {
-    width: 35%; 
+    width: 40%; 
         }
    #col3 {
-    width: 30%; 
+    width: 20%; 
       }
-	  
-	  .button_example{
-border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:16px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
- background-color: #ffc579; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc579), to(#fb9d23));
- background-image: -webkit-linear-gradient(top, #ffc579, #fb9d23);
- background-image: -moz-linear-gradient(top, #ffc579, #fb9d23);
- background-image: -ms-linear-gradient(top, #ffc579, #fb9d23);
- background-image: -o-linear-gradient(top, #ffc579, #fb9d23);
- background-image: linear-gradient(to bottom, #ffc579, #fb9d23);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffc579, endColorstr=#fb9d23);
-}
-
-.button_example:hover{
- border:1px solid #ff9913;
- background-color: #ffaf46; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffaf46), to(#e78404));
- background-image: -webkit-linear-gradient(top, #ffaf46, #e78404);
- background-image: -moz-linear-gradient(top, #ffaf46, #e78404);
- background-image: -ms-linear-gradient(top, #ffaf46, #e78404);
- background-image: -o-linear-gradient(top, #ffaf46, #e78404);
- background-image: linear-gradient(to bottom, #ffaf46, #e78404);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffaf46, endColorstr=#e78404);
-}
     </style>
 </head>
 
@@ -87,28 +66,36 @@ border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;bo
 	  ?>
 <?php
 require 'connect.php';
+$id=$_REQUEST['id'];
+$Nomer = $_REQUEST['Nomer']; 
+$Status = $_REQUEST['Status']; 
+$Remonter = $_REQUEST['Remonter']; 
+$Familia = $_REQUEST['Familia']; 
+$Name = $_REQUEST['Name']; 
+$Otchestvo = $_REQUEST['Otchestvo'];
+$Telefon = $_REQUEST['Telefon']; 
+$Email = $_REQUEST['Email']; 
+$Vid_ustroystva = $_REQUEST['Vid_ustroystva']; 
+$Proizvoditel = $_REQUEST['Proizvoditel']; 
+$Model = $_REQUEST['Model']; 
+$Defekti = $_REQUEST['Defekti']; 
+$Vid_polomki = $_REQUEST['Vid_polomki']; 
+
+$Detal = $_REQUEST['Detal']; 
+$Detal_com = $_REQUEST['Detal_com'];
+$Stoimost_pabot = $_REQUEST['Stoimost_pabot']; 
+$Stoimost_detali = $_REQUEST['Stoimost_detali']; 
+$Kod_ustr = $_REQUEST['Kod_ustr'];
 
 
-$Kassa_vsego = trim($_REQUEST['Kassa_vsego']);
-$V_bank = trim($_REQUEST['V_bank']);
+$update_sql = "UPDATE zakaz SET  Nomer='$Nomer', Status='$Status', Remonter='$Remonter', Familia='$Familia', Name='$Name', Otchestvo='$Otchestvo', Telefon='$Telefon', Email='$Email', Vid_ustroystva='$Vid_ustroystva', Proizvoditel='$Proizvoditel', Model='$Model', Defekti='$Defekti', Vid_polomki='$Vid_polomki', Detal='$Detal', Detal_com='$Detal_com', Stoimost_pabot='$Stoimost_pabot',  Stoimost_detali='$Stoimost_detali', Kod_ustr='$Kod_ustr' WHERE id='$id'";
+mysql_query($update_sql) or die("Ошибка вставки" . mysql_error());
+echo '<p>Заказ сохранён в базе!</p>';
 
-
-$ins = mysql_query( "select fio from Reg_vxod where id=(select max(id) from Reg_vxod) " );
-	$mainrow=mysql_fetch_assoc($ins);
-	$thetext=$mainrow["fio"];
-
-$insert_sql = "INSERT INTO kassa_vecher (Data, Kassa_vsego, V_bank, user)" .
-"VALUES(now(), '{$Kassa_vsego}', '{$V_bank}', '{$thetext}');";
-mysql_query($insert_sql);
-
-echo "<br /><br />Кассовый день Закрыт! <br /><br />";
-echo ('<form action="close.php" method="POST">
-				<input type="submit" value="Выход" class="button_example"/></br></br>
-			</form>');
-
+?>
+<?php
 echo "
-
-
+</br>
 <div id='footer'>
         <div class='indent'>
           <div class='fleft'>group of companies LeXan</div>

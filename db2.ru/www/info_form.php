@@ -14,6 +14,11 @@ echo "
 <title>Новый заказ</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <link href='layout.css' rel='stylesheet' type='text/css' />
+<link href='style/style.css' rel='stylesheet' type='text/css' />
+<style type='text/css' media='print'> 
+  div.no_print {display: none; } 
+</style> 
+
 <style type='text/css'>
    TD {
    vertical-align: center; 
@@ -28,13 +33,34 @@ echo "
    }
    #col3 {
     width: 30%; 
+	}
    
+	.button_example{
+border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:16px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+ background-color: #ffc579; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc579), to(#fb9d23));
+ background-image: -webkit-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -moz-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -ms-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -o-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: linear-gradient(to bottom, #ffc579, #fb9d23);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffc579, endColorstr=#fb9d23);
+}
+
+.button_example:hover{
+ border:1px solid #ff9913;
+ background-color: #ffaf46; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffaf46), to(#e78404));
+ background-image: -webkit-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -moz-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -ms-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -o-linear-gradient(top, #ffaf46, #e78404);
+ background-image: linear-gradient(to bottom, #ffaf46, #e78404);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffaf46, endColorstr=#e78404);
+}
 	
-   }
+   
     </style>
 </head>
 
 <body id='page6'>
+ 
 <div class='tail-top-right'></div>
 <div class='tail-top'>
   <div class='tail-bottom'>
@@ -43,25 +69,31 @@ echo "
       <div id='header'>
         <form action='' method='post' id='form'>
           <div>
+		  <div class='no_print'> 
             <label>Поиск:</label>
             <span>
             <input type='text' />
-            </span></div>
+            </span></div></div>
         </form>
         <ul class='list'>
-          <li><a href='index.php'><img src='images/icon1.gif' alt='' /></a></li>
-          <li><a href='index.php'><img src='images/icon2.gif' alt='' /></a></li>
+		<div class='no_print'> 
+          <li><a href='home.php'><img src='images/icon1.gif' alt='' /></a></li>
+          <li><a href='home.php'><img src='images/icon2.gif' alt='' /></a></li>
           <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
+		  </div>
         </ul>
         <ul class='site-nav'>
+		<div class='no_print'> 
           <li><a href='info_form.php'>Новый заказ</a></li>
           <li><a href='search_user.php'>Найти заказ</a></li>
           <li><a href='select_change.php'>Все заказы</a></li>
           <li><a href='video/video.php'>Видео в помощь</a></li>
           <li><a href='forum/test.php''>Форум</a></li>
           <li class='last'><a href='vhod.php'>Выход</a></li>
+		  </div>
         </ul>
-        <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
+		
+        <div class='logo'><a href='home.php'><img src='images/logo.png' alt='' /></a></div>
         <div class='slogan'><img src='images/slogan.png' alt='' /></div>
       </div>
 
@@ -74,7 +106,7 @@ echo "
 <td id='col1'>
 </br></br>
 <label for='Nomer'>Номер:</label>
-<input type='text' name='Nomer' size='30'><br/><br/> 
+<input type='text' name='Nomer' size='30' ><br/><br/> 
 </td>
 
 <td id='col2'>
@@ -139,7 +171,7 @@ echo "</select><br/><br/></td></tr></table></br><hr></br>";
 
 <table width='90%' cellpadding='5' cellspacing='0'>
 <tr>
-<td id='col1'></br>
+<td id='col1'>
 <label for='Vid_ustroystva'>Вид устройства:</label><br/>
 "; ?>
 
@@ -235,8 +267,11 @@ echo "</select><br/><br/></td></tr>";
 <td id='col2'>
 </td>
 <td id='col3' >
-<input id='submit' type='submit' value=' Создать '><br/><br/>
-<div class='no_print'><input type='button' value=' Печать ' onClick='window.print();'/> </div>
+<div class='no_print'> 
+<input type='button' value=' Печать ' class='button_example' onClick='window.print();'/> 
+<input id='submit' type='submit' value=' Сохранить ' class='button_example' >
+</div>
+</br></br>
 </td>
 </table>
 

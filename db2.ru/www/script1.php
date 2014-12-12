@@ -62,7 +62,7 @@ if ($myrow['password']== md5( "$password" )){
     mysql_query($insert);
 	
 	echo "<br /><br />Поздравляем! Вы успешно вошли на сайт! <br />
-	<a href='http://db2.ru/menu.php'>Главная страница</a><br /><a href='/php-uroki/avtorizaciya/reg.php'>Регистрация</a>";
+	<a href='http://db2.ru/home.php'>Главная страница</a></br >";
     }
 
 else {

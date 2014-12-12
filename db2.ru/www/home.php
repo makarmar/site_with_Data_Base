@@ -22,7 +22,7 @@ echo "
    color: #000000;
    }
    #col1 {
-    width: 40%; 
+    width: 25%; 
    
    }
    #col2 {
@@ -30,7 +30,7 @@ echo "
      
    }
    #col3 {
-    width: 20%; 
+    width: 35%; 
    }
  
 .now{
@@ -132,9 +132,9 @@ window.onload = dysTime;
             </span></div>
         </form>
         <ul class='list'>
-          <li><a href='index.php'><img src='images/icon1.gif' alt='' /></a></li>
-          <li><a href='index.php'><img src='images/icon2.gif' alt='' /></a></li>
-          <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
+          <li><a href='home.php'><img src='images/icon1.gif' alt='' /></a></li>
+          <li><a href='home.php'><img src='images/icon2.gif' alt='' /></a></li>
+          <li class='last'><a href='home.php'><img src='images/icon3.gif' alt='' /></a></li>
         </ul>
         <ul class='site-nav'>
           <li><a href='info_form.php'>Новый заказ</a></li>
@@ -144,7 +144,7 @@ window.onload = dysTime;
           <li><a href='forum/test.php''>Форум</a></li>
           <li class='last'><a href='vhod.php'>Выход</a></li>
         </ul>
-        <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
+        <div class='logo'><a href='home.php'><img src='images/logo.png' alt='' /></a></div>
         <div class='slogan'><img src='images/slogan.png' alt='' /></div>
       </div>
 </br>
@@ -292,11 +292,13 @@ print calendar($mon,$year,$day);
 echo "
 </td>
 
-<td id='col2' align=left>
+<td id='col2' align=center>
 
 <a class='button_example' href='info_form.php'> Новый заказ </a>
 </br></br></br>
-<a class='button_example' href='search_user.php'> Поиск заказа </a>
+<a class='button_example' href='zakrit.php'>Закрыть заказ</a>
+</br></br></br>
+<a class='button_example' href='reg.php'> Регистрация </a>
 </td>
 
 <td id='col3' align=right>
