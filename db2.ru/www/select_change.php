@@ -1,4 +1,7 @@
 <?php
+  header('Content-Type: text/html; charset= utf-8');
+?>
+<?php
 require 'connect.php';
 session_start();
 if (isset($_SESSION['login']))
@@ -9,7 +12,7 @@ echo "
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
-<title>Все заказы</title>
+<title>Р’СЃРµ Р·Р°РєР°Р·С‹</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <link href='layout.css' rel='stylesheet' type='text/css' />
 <style type='text/css'>
@@ -37,7 +40,7 @@ echo "
       <div id='header'>
         <form action='' method='post' id='form'>
           <div>
-            <label>Поиск:</label>
+            <label>РџРѕРёСЃРє:</label>
             <span>
             <input type='text' />
             </span></div>
@@ -48,18 +51,18 @@ echo "
           <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
         </ul>
         <ul class='site-nav'>
-          <li><a href='info_form.php'>Новый заказ</a></li>
-          <li><a href='search_user.php'>Найти заказ</a></li>
-          <li><a href='select_change.php'>Все заказы</a></li>
-          <li><a href='video/video.php'>Видео в помощь</a></li>
-          <li><a href='forum/test.php''>Форум</a></li>
-          <li class='last'><a href='vhod.php'>Выход</a></li>
+          <li><a href='info_form.php'>РќРѕРІС‹Р№ Р·Р°РєР°Р·</a></li>
+          <li><a href='search_user.php'>РќР°Р№С‚Рё Р·Р°РєР°Р·</a></li>
+          <li><a href='select_change.php'>Р’СЃРµ Р·Р°РєР°Р·С‹</a></li>
+          <li><a href='video/video.php'>Р’РёРґРµРѕ РІ РїРѕРјРѕС‰СЊ</a></li>
+          <li><a href='forum/test.php''>Р¤РѕСЂСѓРј</a></li>
+          <li class='last'><a href='vhod.php'>Р’С‹С…РѕРґ</a></li>
         </ul>
         <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
         <div class='slogan'><img src='images/slogan.png' alt='' /></div>
       </div>
 	  </br>
-	  <h3>База</h3>
+	  <h3>Р‘Р°Р·Р°</h3>
 
 
 <form action='edit.php' method='post'>
@@ -82,13 +85,13 @@ echo "
 <td id='col1'> </td>
 <td id='col2'> </td>
 <td id='col3'>
-<input type='submit' value=' Редактировать заказ '></br></br>
+<input type='submit' value=' Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ Р·Р°РєР°Р· '></br></br>
 
 </form>
 
 <form action='zakrit.php' method='post'>
 
-<input type='submit' value=' Закрыть заказ '>
+<input type='submit' value=' Р—Р°РєСЂС‹С‚СЊ Р·Р°РєР°Р· '>
 </form> </br>
 </td>
 </tr>
@@ -97,7 +100,7 @@ echo "
 <div id='footer'>
         <div class='indent'>
           <div class='fleft'>group of companies LeXan</div>
-          <div class='fright'>Тел.: 8(812)100-00-00</br>+7911-100-00-00</div>
+          <div class='fright'>РўРµР».: 8(812)100-00-00</br>+7911-100-00-00</div>
         </div>
       </div>
 

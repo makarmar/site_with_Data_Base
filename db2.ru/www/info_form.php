@@ -1,4 +1,7 @@
 <?php
+  header('Content-Type: text/html; charset= utf-8');
+?>
+<?php
 require 'connect.php';
 session_start();
 if (isset($_SESSION['login']))
@@ -8,7 +11,7 @@ echo "
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
-<title>Новый заказ</title>
+<title>РќРѕРІС‹Р№ Р·Р°РєР°Р·</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <link href='layout.css' rel='stylesheet' type='text/css' />
 <style type='text/css'>
@@ -40,7 +43,7 @@ echo "
       <div id='header'>
         <form action='' method='post' id='form'>
           <div>
-            <label>Поиск:</label>
+            <label>РџРѕРёСЃРє:</label>
             <span>
             <input type='text' />
             </span></div>
@@ -51,32 +54,32 @@ echo "
           <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
         </ul>
         <ul class='site-nav'>
-          <li><a href='info_form.php'>Новый заказ</a></li>
-          <li><a href='search_user.php'>Найти заказ</a></li>
-          <li><a href='select_change.php'>Все заказы</a></li>
-          <li><a href='video/video.php'>Видео в помощь</a></li>
-          <li><a href='forum/test.php''>Форум</a></li>
-          <li class='last'><a href='vhod.php'>Выход</a></li>
+          <li><a href='info_form.php'>РќРѕРІС‹Р№ Р·Р°РєР°Р·</a></li>
+          <li><a href='search_user.php'>РќР°Р№С‚Рё Р·Р°РєР°Р·</a></li>
+          <li><a href='select_change.php'>Р’СЃРµ Р·Р°РєР°Р·С‹</a></li>
+          <li><a href='video/video.php'>Р’РёРґРµРѕ РІ РїРѕРјРѕС‰СЊ</a></li>
+          <li><a href='forum/test.php''>Р¤РѕСЂСѓРј</a></li>
+          <li class='last'><a href='vhod.php'>Р’С‹С…РѕРґ</a></li>
         </ul>
         <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
         <div class='slogan'><img src='images/slogan.png' alt='' /></div>
       </div>
 
 
-</br><h3>Заказ</h3>
+</br><h3>Р—Р°РєР°Р·</h3>
 	  
 <form action='form.php' method='post' name='forma'>
 <table width='90%' cellpadding='5' cellspacing='0'>
 <tr>
 <td id='col1'>
 </br></br>
-<label for='Nomer'>Номер:</label>
+<label for='Nomer'>РќРѕРјРµСЂ:</label>
 <input type='text' name='Nomer' size='30'><br/><br/> 
 </td>
 
 <td id='col2'>
 </br></br>
-<label for='Status'>Статус:</label><br/> ";?>
+<label for='Status'>РЎС‚Р°С‚СѓСЃ:</label><br/> ";?>
 
 <?php
 require 'connect.php';
@@ -86,12 +89,12 @@ while($row = mysql_fetch_array($result))
 {
  echo "<option value='".$row['name']."'>".$row['name']."</option>";
 }
-echo '<option value="" selected="selected">Выберите..</option>';
+echo '<option value="" selected="selected">Р’С‹Р±РµСЂРёС‚Рµ..</option>';
 echo "</select><br/><br/></td>";
 ?>
 
 <? echo "
-<td id='col3'></br></br><label for='Remonter'>Ремонтёр:</label><br/> ";?>
+<td id='col3'></br></br><label for='Remonter'>Р РµРјРѕРЅС‚С‘СЂ:</label><br/> ";?>
 <?php
 require 'connect.php'; 
 $result =  mysql_query("SELECT fio FROM Reg_vxod WHERE id = ( SELECT MAX( id ) FROM Reg_vxod )");
@@ -106,17 +109,17 @@ echo "</select><br/><br/></td></tr></table></br><hr></br>";
 
 <? echo "<table width='90%' cellpadding='5' cellspacing='0'>
 <tr><td id='col1'>
-<label for='Familia'>Фамилия:</label> </br>
+<label for='Familia'>Р¤Р°РјРёР»РёСЏ:</label> </br>
 <input type='text'name='Familia' size='30'><br/> <br/>
 </td>
 
 <td id='col12
-<label for='Name'>Имя:</label><br/>
+<label for='Name'>РРјСЏ:</label><br/>
 <input type='text' name='Name' size='30'><br/> <br/>
 </td>
 
 <td id='col3'>
-<label for='Otchestvo'>Отчество:</label>
+<label for='Otchestvo'>РћС‚С‡РµСЃС‚РІРѕ:</label>
 <input type='text' name='Otchestvo' size='30'><br/><br/>
 </td></tr>
 
@@ -125,7 +128,7 @@ echo "</select><br/><br/></td></tr></table></br><hr></br>";
 </td>
 
 <td id='col2'>
-<label for='Telefon'>Телефон:</label> 
+<label for='Telefon'>РўРµР»РµС„РѕРЅ:</label> 
 <input type='text' name='Telefon' size='30'><br/> <br/>
 </td>
 
@@ -137,7 +140,7 @@ echo "</select><br/><br/></td></tr></table></br><hr></br>";
 <table width='90%' cellpadding='5' cellspacing='0'>
 <tr>
 <td id='col1'></br>
-<label for='Vid_ustroystva'>Вид устройства:</label><br/>
+<label for='Vid_ustroystva'>Р’РёРґ СѓСЃС‚СЂРѕР№СЃС‚РІР°:</label><br/>
 "; ?>
 
 
@@ -149,11 +152,11 @@ while($row = mysql_fetch_array($result))
 {
  echo "<option value='".$row['name']."'>".$row['name']."</option>";
 }
-echo '<option value="" selected="selected">Выберите..</option>';
+echo '<option value="" selected="selected">Р’С‹Р±РµСЂРёС‚Рµ..</option>';
 echo "</select></br><br/></td>";
 ?>
 
-<? echo " <td id='col2'><label for='Proizvoditel'>Производитель:</label><br/> ";?>
+<? echo " <td id='col2'><label for='Proizvoditel'>РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ:</label><br/> ";?>
 <?php
 require 'connect.php';
 $result =  mysql_query("SELECT id, name FROM Proizvoditel");
@@ -162,24 +165,24 @@ while($row = mysql_fetch_array($result))
 {
  echo "<option value='".$row['name']."'>".$row['name']."</option>";
 }
-echo '<option value="" selected="selected">Выберите..</option>';
+echo '<option value="" selected="selected">Р’С‹Р±РµСЂРёС‚Рµ..</option>';
 echo "</select></br><br/></td>";
 ?>
 
 
  <? echo "<td id='col3'>
-<label for='Model'>Модель:</label><br/>
+<label for='Model'>РњРѕРґРµР»СЊ:</label><br/>
 <input type='text' name='Model' size='30'><br/><br/> 
 </td></tr>
  
 <tr>
 <td id='col1'>
-<label for='Defekti'>Заявленные дефекты:</label> <br/>
+<label for='Defekti'>Р—Р°СЏРІР»РµРЅРЅС‹Рµ РґРµС„РµРєС‚С‹:</label> <br/>
 <input type='text' name='Defekti' size='30'><br/> <br/>
 </td>
 
 <td id='col2'>
-<label for='Vid_polomki'>Вид поломки:</label><br/> ";?>
+<label for='Vid_polomki'>Р’РёРґ РїРѕР»РѕРјРєРё:</label><br/> ";?>
 <?php
 require 'connect.php';
 $result =  mysql_query("SELECT id, name FROM Vidpolomki");
@@ -188,13 +191,13 @@ while($row = mysql_fetch_array($result))
 {
  echo "<option value='".$row['name']."'>".$row['name']."</option>";
 }
-echo '<option value="" selected="selected">Выберите..</option>';
+echo '<option value="" selected="selected">Р’С‹Р±РµСЂРёС‚Рµ..</option>';
 echo "</select><br/><br/></td>";
 ?>
 
 
 <? echo "<td id='col3'>
-<label for='Detal'>Необходимая деталь:</label><br/>  ";?>
+<label for='Detal'>РќРµРѕР±С…РѕРґРёРјР°СЏ РґРµС‚Р°Р»СЊ:</label><br/>  ";?>
 <?php
 require 'connect.php';
 $result =  mysql_query("SELECT id, name FROM Detal");
@@ -203,22 +206,22 @@ while($row = mysql_fetch_array($result))
 {
  echo "<option value='".$row['name']."'>".$row['name']."</option>";
 }
-echo '<option value="" selected="selected">Выберите..</option>';
+echo '<option value="" selected="selected">Р’С‹Р±РµСЂРёС‚Рµ..</option>';
 echo "</select><br/><br/></td></tr>";
 ?>
 
 <? echo "<tr><td id='col1'>
-<label for='Detal_com'>Коммент:</label><br/>
+<label for='Detal_com'>РљРѕРјРјРµРЅС‚:</label><br/>
 <input type='text' name='Detal_com' size='30'><br/><br/> 
 </td>
 
 <td id='col2'>
-<label for='Stoimost_pabot'>Стоимость работ:</label> <br/>
+<label for='Stoimost_pabot'>РЎС‚РѕРёРјРѕСЃС‚СЊ СЂР°Р±РѕС‚:</label> <br/>
 <input type='text' name='Stoimost_pabot' size='30'><br/> <br/>
 </td>
 
 <td id='col3'>
-<label for='Stoimost_detali'>Стоимость детали:</label> <br/>
+<label for='Stoimost_detali'>РЎС‚РѕРёРјРѕСЃС‚СЊ РґРµС‚Р°Р»Рё:</label> <br/>
 <input type='text' name='Stoimost_detali' size='30'<br/> <br/><br/></td></tr></table>
 ";?>
 
@@ -232,15 +235,15 @@ echo "</select><br/><br/></td></tr>";
 <td id='col2'>
 </td>
 <td id='col3' >
-<input id='submit' type='submit' value=' Создать '><br/><br/>
-<div class='no_print'><input type='button' value=' Печать ' onClick='window.print();'/> </div>
+<input id='submit' type='submit' value=' РЎРѕР·РґР°С‚СЊ '><br/><br/>
+<div class='no_print'><input type='button' value=' РџРµС‡Р°С‚СЊ ' onClick='window.print();'/> </div>
 </td>
 </table>
 
 <div id='footer'>
         <div class='indent'>
           <div class='fleft'>group of companies LeXan</div>
-          <div class='fright'>Тел.: 8(812)100-00-00</br>+7911-100-00-00</div>
+          <div class='fright'>РўРµР».: 8(812)100-00-00</br>+7911-100-00-00</div>
         </div>
       </div>
 

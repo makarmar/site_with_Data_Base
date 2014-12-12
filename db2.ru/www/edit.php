@@ -1,9 +1,12 @@
+<?php
+  header('Content-Type: text/html; charset= utf-8');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Вносим изменеиния</title>
+<title>Р’РЅРѕСЃРёРј РёР·РјРµРЅРµРёРЅРёСЏ</title>
 </head>
 
 <body>
@@ -17,56 +20,56 @@ printf("<form action='update.php' method='post' name='forma'>
 <fieldset>
 <input type='hidden' name='id'  value='%s'><br/>
 
-<label for='Nomer'>Номер:</label><br/>
+<label for='Nomer'>РќРѕРјРµСЂ:</label><br/>
 <input type='text' name='Nomer' size='30' value='%s' readonly='readonly'><br/>
 
-<label for='Familia'>Фамилия:</label><br/>
+<label for='Familia'>Р¤Р°РјРёР»РёСЏ:</label><br/>
 <input type='text' name='Familia' size='30' value='%s'><br/>
-<label for='Name'>Имя:</label><br/>
+<label for='Name'>РРјСЏ:</label><br/>
 <input type='text' name='Name' size='30' value='%s'><br/>
-<label for='Otchestvo'>Отчество:</label><br/>
+<label for='Otchestvo'>РћС‚С‡РµСЃС‚РІРѕ:</label><br/>
 <input type='text' name='Otchestvo' size='30' value='%s'><br/>
-<label for='Telefon'>Телефон:</label><br/>
+<label for='Telefon'>РўРµР»РµС„РѕРЅ:</label><br/>
 <input type='text' name='Telefon' size='30' value='%s'><br/>
 <label for='Email'>Email:</label><br/>
 <input type='text' name='Email' size='30' value='%s'><br/>
 
-<label for='Vid_ustroystva'>Вид устройства:</label><br/>
+<label for='Vid_ustroystva'>Р’РёРґ СѓСЃС‚СЂРѕР№СЃС‚РІР°:</label><br/>
 <input type='text' name='Vid_ustroystva' size='30' value='%s'><br/>
 
-<label for='Proizvoditel'>Производитель:</label><br/>
+<label for='Proizvoditel'>РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ:</label><br/>
 <input type='text' name='Proizvoditel' size='30' value='%s'><br/>
  
-<label for='Model'>Модель:</label><br/>
+<label for='Model'>РњРѕРґРµР»СЊ:</label><br/>
 <input type='text' name='Model' size='30' value='%s'><br/>
-<label for='Defekti'>Дефекты:</label><br/>
+<label for='Defekti'>Р”РµС„РµРєС‚С‹:</label><br/>
 <input type='text' name='Defekti' size='30' value='%s'><br/>
  
-<label for='Vid_polomki'>Вид поломки:</label><br/>
+<label for='Vid_polomki'>Р’РёРґ РїРѕР»РѕРјРєРё:</label><br/>
 <input type='text' name='Vid_polomki' size='30' value='%s'><br/>
 
 
-<label for='Stoimost_pabot'>Стоимость работ:</label><br/>
+<label for='Stoimost_pabot'>РЎС‚РѕРёРјРѕСЃС‚СЊ СЂР°Р±РѕС‚:</label><br/>
 <input type='text' name='Stoimost_pabot' size='30' value='%s'><br/>
-<label for='Detal'>Деталь:</label><br/>
+<label for='Detal'>Р”РµС‚Р°Р»СЊ:</label><br/>
 <input type='text' name='Detal' size='30' value='%s'><br/>
-<label for='Stoimost_detali'>Стоимость детали:</label><br/>
+<label for='Stoimost_detali'>РЎС‚РѕРёРјРѕСЃС‚СЊ РґРµС‚Р°Р»Рё:</label><br/>
 <input type='text' name='Stoimost_detali' size='30' value='%s'><br/>
-<label for='Status'>Статус:</label><br/>
+<label for='Status'>РЎС‚Р°С‚СѓСЃ:</label><br/>
 <input type='text' name='Status' size='30' value='%s' readonly='readonly'><br/>
-<label for='Remonter'>Ремонтер:</label><br/>
+<label for='Remonter'>Р РµРјРѕРЅС‚РµСЂ:</label><br/>
 <input type='text' name='Remonter' size='30' value='%s' readonly='readonly'><br/>
-<label for='Kod_ustr'>Код устройства:</label><br/>
+<label for='Kod_ustr'>РљРѕРґ СѓСЃС‚СЂРѕР№СЃС‚РІР°:</label><br/>
 <input type='text' name='Kod_ustr' size='30' value='%s' ><br/>
 
 </fieldset>
 <br/>
 <fieldset>
-<input id='submit' type='submit' value='Редактировать запись'><br/>
+<input id='submit' type='submit' value='Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ Р·Р°РїРёСЃСЊ'><br/>
 </fieldset>
 </form>",$row['id'], $row['Nomer'],  $row['Familia'], $row['Name'], $row['Otchestvo'], $row['Telefon'], $row['Email'], $row['Vid_ustroystva'], $row['Proizvoditel'],  $row['Model'], $row['Defekti'], $row['Vid_polomki'], $row['Stoimost_pabot'], $row['Detal'], $row['Stoimost_detali'], $row['Status'], $row['Remonter'], $row['Kod_ustr']);
 ?>
 
-<a href="menu.php">Назад в меню</a></br></br>
+<a href="menu.php">РќР°Р·Р°Рґ РІ РјРµРЅСЋ</a></br></br>
 </body>
 </html>

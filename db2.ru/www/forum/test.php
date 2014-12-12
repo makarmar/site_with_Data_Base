@@ -1,9 +1,12 @@
 <?php
+  header('Content-Type: text/html; charset= utf-8');
+?>
+<?php
 require_once("SForum_class.php");
 echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
-<title>Все заказы</title>
+<title>Р’СЃРµ Р·Р°РєР°Р·С‹</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <link href='layout.css' rel='stylesheet' type='text/css' />
 <style type='text/css'>
@@ -34,7 +37,7 @@ echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.or
       <div id='header'>
         <form action='' method='post' id='form'>
           <div>
-            <label>Поиск:</label>
+            <label>РџРѕРёСЃРє:</label>
             <span>
             <input type='text' />
             </span></div>
@@ -45,12 +48,12 @@ echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.or
           <li class='last'><a href='index.php'><img src='images/icon3.gif' alt='' /></a></li>
         </ul>
         <ul class='site-nav'>
-          <li><a href='../info_form.php'>Новый заказ</a></li>
-          <li><a href='../search_user.php'>Найти заказ</a></li>
-          <li><a href='../select_change.php'>Все заказы</a></li>
-          <li><a href='../video/video.php'>Видео в помощь</a></li>
-          <li><a href='test.php''>Форум</a></li>
-          <li class='last'><a href='../vhod.php'>Выход</a></li>
+          <li><a href='../info_form.php'>РќРѕРІС‹Р№ Р·Р°РєР°Р·</a></li>
+          <li><a href='../search_user.php'>РќР°Р№С‚Рё Р·Р°РєР°Р·</a></li>
+          <li><a href='../select_change.php'>Р’СЃРµ Р·Р°РєР°Р·С‹</a></li>
+          <li><a href='../video/video.php'>Р’РёРґРµРѕ РІ РїРѕРјРѕС‰СЊ</a></li>
+          <li><a href='test.php''>Р¤РѕСЂСѓРј</a></li>
+          <li class='last'><a href='../vhod.php'>Р’С‹С…РѕРґ</a></li>
         </ul>
         <div class='logo'><a href='index.php'><img src='images/logo.png' alt='' /></a></div>
         <div class='slogan'><img src='images/slogan.png' alt='' /></div>
@@ -74,7 +77,7 @@ if (isset($_POST['submit'])) {
      }
 	 else
 	 {
-	 echo "Не правильно введена капча";
+	 echo "РќРµ РїСЂР°РІРёР»СЊРЅРѕ РІРІРµРґРµРЅР° РєР°РїС‡Р°";
 	 }
 }
 
@@ -95,7 +98,7 @@ print("<br>\n");
 echo "<div id='footer'>
         <div class='indent'>
           <div class='fleft'>group of companies LeXan</div>
-          <div class='fright'>Тел.: 8(812)100-00-00</br>+7911-100-00-00</div>
+          <div class='fright'>РўРµР».: 8(812)100-00-00</br>+7911-100-00-00</div>
         </div>
       </div>
 

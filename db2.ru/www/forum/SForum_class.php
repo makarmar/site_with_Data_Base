@@ -1,4 +1,7 @@
 <?php
+  header('Content-Type: text/html; charset= utf-8');
+?>
+<?php
 
 /*********************************
 * SForum class v1.4
@@ -49,7 +52,7 @@
 *
 **********************************
 *
-* @autor: Wojciech Napieraіa XII.2004
+* @autor: Wojciech NapieraС–a XII.2004
 * @help: Ondra Marek ondra.marek@interval.cz;Pepe josegiambruno@adinet.com.uy
 * @
 * voytass@op.pl
@@ -61,7 +64,7 @@
 
 
 class SForum {
-    var $SFname = "<h3>Форум</h3>";
+    var $SFname = "<h3>Р¤РѕСЂСѓРј</h3>";
     var $ptitle;
     var $react;              // number of answers in a thread
     var $pansw;
@@ -72,7 +75,7 @@ class SForum {
         session_start();
 		$this->ptitle = NULL;
         $this->pansw = 0;
-        $this->title = "<TITLE>$this->Форум</TITLE>";
+        $this->title = "<TITLE>$this->Р¤РѕСЂСѓРј</TITLE>";
         print($this->title);
         include_once("config.php");  // DB Config Data
         $pol = mysql_connect($dbhost,$dbuname,$dbpass) or die ("Couldn't connect to server.<br>\n");
@@ -87,14 +90,14 @@ class SForum {
         $zawartosc = 
 		"\n\n<FORM ACTION=\"".$_SERVER['PHP_SELF']."\" METHOD=\"post\" NAME=\"frm\">\n"
         . "</br><table width='90%' cellpadding='5' cellspacing='7'><TR>\n"
-        . "<td id='col1'>Заголовок темы:</TD><td id='col2'><INPUT TYPE=\"text\" NAME=\"frm_ptitle\" VALUE=\"$this->ptitle\" SIZE=\"30\"></TD>\n"
+        . "<td id='col1'>Р—Р°РіРѕР»РѕРІРѕРє С‚РµРјС‹:</TD><td id='col2'><INPUT TYPE=\"text\" NAME=\"frm_ptitle\" VALUE=\"$this->ptitle\" SIZE=\"30\"></TD>\n"
         . "</TR><TR>"
-        . "<td id='col1'>Текст:</TD><td id='col2'><TEXTAREA NAME=\"frm_text\" cols=\"50\" rows=\"10\"></TEXTAREA></TD>\n"
+        . "<td id='col1'>РўРµРєСЃС‚:</TD><td id='col2'><TEXTAREA NAME=\"frm_text\" cols=\"50\" rows=\"10\"></TEXTAREA></TD>\n"
         . "<td id='col4'><img src='captcha.php' />"
 		. "</br></br><input class='input' type='text' name='norobot' size='12' />"
-		. "</br></br><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\" Написать \"></td>"
+		. "</br></br><INPUT TYPE=\"submit\" NAME=\"submit\" VALUE=\" РќР°РїРёСЃР°С‚СЊ \"></td>"
 		. "</TR><TR>\n"
-        . "<td id='col1'>Имя или ник:</TD><td id='col2'><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"30\"></TD>\n"
+        . "<td id='col1'>РРјСЏ РёР»Рё РЅРёРє:</TD><td id='col2'><INPUT TYPE=\"text\" NAME=\"frm_name\" VALUE=\"\" SIZE=\"30\"></TD>\n"
         . "</TR><TR>\n"
         
 				
@@ -157,10 +160,10 @@ class SForum {
                 //number of reactions
                 $this->react=$row1['num'];
                 if ($row['for_name'] == "") {
-                    $row['for_name'] = "Гость";
+                    $row['for_name'] = "Р“РѕСЃС‚СЊ";
                 }
                 $this->ptitle = stripslashes($row['for_ptitle']);
-                print("<tr><TD><A HREF=\"".$_SERVER['PHP_SELF']."?wid=".$row['id']."\">".$this->ptitle."</A></TD><TD ALIGN=\"center\">Ответов:&nbsp;".$this->react."</TD><TD ALIGN=\"center\"  WIDTH=\"20%\">".$row['for_name']."</TD><TD ALIGN=\"center\"  WIDTH=\"20%\">".$row['for_dataw']."</TD></tr>\n\n");
+                print("<tr><TD><A HREF=\"".$_SERVER['PHP_SELF']."?wid=".$row['id']."\">".$this->ptitle."</A></TD><TD ALIGN=\"center\">РћС‚РІРµС‚РѕРІ:&nbsp;".$this->react."</TD><TD ALIGN=\"center\"  WIDTH=\"20%\">".$row['for_name']."</TD><TD ALIGN=\"center\"  WIDTH=\"20%\">".$row['for_dataw']."</TD></tr>\n\n");
             }
             unset($this->react);
             print("</TABLE>\n");
@@ -183,7 +186,7 @@ class SForum {
                 $this->ptitle = stripslashes($row['for_ptitle']);
                 $this->text = nl2br(stripslashes($row['for_text']));
                 if ($row['for_name'] == "") {
-                    $row['for_name'] = "Гость";
+                    $row['for_name'] = "Р“РѕСЃС‚СЊ";
                 }
                 
                 print("<tr><TD><b>".$this->ptitle."</b><br><div ALIGN=\"right\"><i><FONT SIZE=\"1\">".$row['for_name']."___".$row['for_data']."</FONT></i></DIV>\n\n");
@@ -201,7 +204,7 @@ class SForum {
 
     // Main_page: Show back-to-main link
     function Main_page() {
-        print("<A HREF=\"".$_SERVER['PHP_SELF']."\">К темам</A>\n</br></br>");
+        print("<A HREF=\"".$_SERVER['PHP_SELF']."\">Рљ С‚РµРјР°Рј</A>\n</br></br>");
 		
 		
 		    }
